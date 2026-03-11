@@ -8,11 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#0b0b0f;--bg2:#111118;--surface:#16161f;
-  --border:rgba(200,180,220,0.12);--text:#e8e4f0;--muted:#8a849a;
-  --a1:#c9a8e0;--a2:#f0c4d4;--a3:#a8c4e0;
-}
+:root{--bg:#0b0b0f;--bg2:#111118;--surface:#16161f;--border:rgba(200,180,220,0.12);--text:#e8e4f0;--muted:#8a849a;--a1:#c9a8e0;--a2:#f0c4d4;--a3:#a8c4e0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Zen Kaku Gothic New',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
 .cursor{position:fixed;width:8px;height:8px;background:var(--a1);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width .3s,height .3s,background .3s}
@@ -38,7 +34,7 @@ nav{position:fixed;top:0;left:0;right:0;padding:28px 48px;display:flex;justify-c
 .hsub{margin-top:40px;font-size:14px;color:var(--muted);letter-spacing:.08em;line-height:2;opacity:0;animation:fup 1s ease .8s forwards;max-width:520px;margin-left:auto;margin-right:auto}
 .hscroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:12px;opacity:0;animation:fup 1s ease 1.2s forwards}
 .hscroll span{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
-.sline{width:1px;height:60px;background:linear-gradient(to bottom,var(--a1),transparent);animation:sp 2s ease-in-out infinite}
+.scrolline{width:1px;height:60px;background:linear-gradient(to bottom,var(--a1),transparent);animation:sp 2s ease-in-out infinite}
 @keyframes sp{0%,100%{opacity:.3}50%{opacity:1}}
 @keyframes fup{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 section{padding:120px 48px}
@@ -48,8 +44,8 @@ section{padding:120px 48px}
 .stitle em{font-style:italic;color:var(--a1)}
 .about-w{max-width:1200px;margin:0 auto}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:60px;align-items:start}
-.about-text p{font-size:15px;line-height:2;color:rgba(232,228,240,.75);margin-bottom:20px}
-.about-text p strong{color:var(--a2);font-weight:400}
+.atext p{font-size:15px;line-height:2;color:rgba(232,228,240,.75);margin-bottom:20px}
+.atext p strong{color:var(--a2);font-weight:400}
 .atags{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
 .atag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--muted);border:1px solid var(--border);padding:6px 14px;transition:all .3s}
 .atag:hover{color:var(--a1);border-color:rgba(201,168,224,.4)}
@@ -62,17 +58,25 @@ section{padding:120px 48px}
 .slbl{font-size:12px;color:var(--muted);letter-spacing:.1em}
 .works-s{background:var(--bg2)}
 .works-w{max-width:1200px;margin:0 auto}
-.wfeat{margin-top:60px;padding:48px;border:1px solid rgba(201,168,224,.25);border-left:3px solid rgba(201,168,224,.4);background:linear-gradient(135deg,var(--surface) 0%,rgba(201,168,224,.04) 100%);position:relative;overflow:hidden;transition:border-color .4s}
+.wtabs{display:flex;gap:0;margin-top:48px;border-bottom:1px solid var(--border)}
+.wtab{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:none;border:none;padding:12px 24px;cursor:pointer;position:relative;transition:color .3s}
+.wtab::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;background:var(--a1);transform:scaleX(0);transition:transform .3s}
+.wtab:hover{color:var(--text)}
+.wtab.active{color:var(--a1)}
+.wtab.active::after{transform:scaleX(1)}
+.wfeat{margin-top:32px;padding:48px;border:1px solid rgba(201,168,224,.25);border-left:3px solid rgba(201,168,224,.4);background:linear-gradient(135deg,var(--surface) 0%,rgba(201,168,224,.04) 100%);position:relative;overflow:hidden;transition:border-color .4s}
 .wfeat:hover{border-color:rgba(201,168,224,.45)}
 .wfeat .wtitle{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;margin-bottom:8px;color:var(--text)}
 .wfeat .wtitle em{font-style:italic}
+.wfeat .wcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+.wfeat .wdesc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:28px}
 .wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));border-left:1px solid var(--border);border-top:1px solid var(--border)}
-.wcard{background:var(--bg2);padding:36px 32px;position:relative;overflow:hidden;transition:all .5s cubic-bezier(.23,1,.32,1);text-decoration:none;display:block;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.wcard{background:var(--bg2);padding:36px 32px;position:relative;overflow:hidden;transition:all .5s cubic-bezier(.23,1,.32,1);text-decoration:none;display:block;border-right:1px solid var(--border);border-bottom:1px solid var(--border);color:var(--text)}
 .wcard::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,224,.05) 0%,transparent 60%);opacity:0;transition:opacity .5s}
 .wcard:hover{background:var(--surface);transform:translateY(-3px)}
 .wcard:hover::before{opacity:1}
+.wcard.hidden{display:none}
 .wcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
-.wfeat .wcard-top{margin-bottom:20px}
 .wcat{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.3em;color:var(--a1);text-transform:uppercase}
 .wst{font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.1em}
 .wst.live{color:#7ec8a4}
@@ -81,7 +85,6 @@ section{padding:120px 48px}
 .wtitle{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:8px;color:var(--text)}
 .wtitle em{font-style:italic}
 .wdesc{font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:20px}
-.wfeat .wdesc{font-size:14px;margin-bottom:28px}
 .wtech{display:flex;flex-wrap:wrap;gap:6px}
 .wtag{font-family:'Space Mono',monospace;font-size:9px;color:rgba(201,168,224,.6);border:1px solid rgba(201,168,224,.15);padding:3px 8px;letter-spacing:.05em}
 .warr{position:absolute;bottom:28px;right:28px;font-size:18px;color:var(--border);transition:all .4s}
@@ -102,20 +105,12 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
 .reveal.visible{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 .d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
-@media(max-width:900px){
-  nav{padding:24px}
-  section{padding:80px 24px}
-  .about-grid{grid-template-columns:1fr;gap:48px}
-  .wgrid{grid-template-columns:1fr}
-  .wfeat{padding:32px 24px}
-  footer{flex-direction:column;gap:16px;text-align:center}
-}
+@media(max-width:900px){nav{padding:24px}section{padding:80px 24px}.about-grid{grid-template-columns:1fr;gap:48px}.wgrid{grid-template-columns:1fr}.wfeat{padding:32px 24px}footer{flex-direction:column;gap:16px;text-align:center}.wtabs{flex-wrap:wrap}}
 </style>
 </head>
 <body>
 <div class="cursor" id="cursor"></div>
 <div class="cring" id="cring"></div>
-
 <nav>
   <a href="#" class="nav-logo">yumimil</a>
   <div class="nav-links">
@@ -124,20 +119,16 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
     <a href="#contact">Contact</a>
   </div>
 </nav>
-
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="orb o1"></div>
-  <div class="orb o2"></div>
-  <div class="orb o3"></div>
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
   <div class="hero-c">
     <span class="hlabel">AI Creator · Tokyo</span>
     <h1 class="htitle">Crafting<br><em>intelligent</em><br>experiences</h1>
     <p class="hsub">医療×テック×感情設計。<br>AIを使って、人の心が動く体験をつくる。</p>
   </div>
-  <div class="hscroll"><span>Scroll</span><div class="sline"></div></div>
+  <div class="hscroll"><span>Scroll</span><div class="scrolline"></div></div>
 </section>
-
 <section id="about">
   <div class="about-w">
     <div class="reveal">
@@ -145,7 +136,7 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
       <h2 class="stitle">医療出身の<br><em>AIクリエイター</em></h2>
     </div>
     <div class="about-grid">
-      <div class="about-text reveal d2">
+      <div class="atext reveal d2">
         <p>美容クリニック・まつエクサロンの経営をしながら、<strong>AIエージェント・プロダクト開発</strong>を行うクリエイター。</p>
         <p>医療の現場知識とビジネス視点を持ちながら、Claude APIやFirebaseを使って<strong>感情に触れるAI体験</strong>を設計することを得意とする。</p>
         <p>「努力を最小化して、体験の質を最大化する」——それがYUMIMILの設計思想。</p>
@@ -157,94 +148,97 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
       <div class="aright">
         <div class="scard reveal d2"><div class="snum">10+</div><div class="slbl">Deployed AI Products &amp; Agents</div></div>
         <div class="scard reveal d3"><div class="snum">2</div><div class="slbl">Businesses Operated (Shinjuku / Shibuya)</div></div>
-        <div class="scard reveal d4"><div class="snum">&#8734;</div><div class="slbl">Ideas in Progress</div></div>
+        <div class="scard reveal d4"><div class="snum">∞</div><div class="slbl">Ideas in Progress</div></div>
       </div>
     </div>
   </div>
 </section>
-
 <section id="works" class="works-s">
   <div class="works-w">
     <div class="reveal">
       <div class="slabel">Works</div>
       <h2 class="stitle">つくってきたもの</h2>
     </div>
-
-    <div class="wfeat reveal d1">
-      <div class="wcard-top">
-        <span class="wcat">Emotional AI</span>
-        <span class="wst">coming soon</span>
-      </div>
+    <div class="wtabs reveal d1">
+      <button class="wtab active" data-filter="all">All</button>
+      <button class="wtab" data-filter="AI Agent">AI Agent</button>
+      <button class="wtab" data-filter="App">App</button>
+      <button class="wtab" data-filter="Automation">Automation</button>
+    </div>
+    <div class="wfeat reveal d2" data-category="App">
+      <div class="wcard-top"><span class="wcat">Emotional AI</span><span class="wst">coming soon</span></div>
       <div class="wtitle"><em>AI Kanojo</em></div>
       <div class="wdesc">LINE風UIで展開するAI彼氏・彼女シミュレーション。複数キャラクターが実在する街のスポットを提案し、写真を送ってくる——感情設計を極めたAIプロダクト。</div>
-      <div class="wtech">
-        <span class="wtag">Claude API</span><span class="wtag">React</span><span class="wtag">Emotion Design</span>
-      </div>
-      <span class="warr">&#8599;</span>
+      <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">React</span><span class="wtag">Emotion Design</span></div>
+      <span class="warr">↗</span>
     </div>
-
     <div class="wgrid">
-
-      <div class="wcard reveal d1">
+      <div class="wcard reveal d1" data-category="AI Agent">
         <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
         <div class="wtitle">HANA</div>
         <div class="wdesc">クリニック向けSNS・コンテンツ運用AIエージェント。「おまかせモード」で月次コンテンツを全自動生成。</div>
         <div class="wtech"><span class="wtag">Firebase</span><span class="wtag">Claude API</span><span class="wtag">Instagram API</span></div>
-        <span class="warr">&#8599;</span>
+        <span class="warr">↗</span>
       </div>
-
-      <div class="wcard reveal d2">
+      <div class="wcard reveal d2" data-category="AI Agent">
         <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
         <div class="wtitle">Kira</div>
         <div class="wdesc">夢見がちな東京在住AIエージェント。独自のGitHubリポジトリ・X・Firebaseメモリシステムを持つ自律型AI。</div>
         <div class="wtech"><span class="wtag">Firebase</span><span class="wtag">Claude API</span><span class="wtag">GitHub</span></div>
-        <span class="warr">&#8599;</span>
+        <span class="warr">↗</span>
       </div>
-
-      <div class="wcard reveal d3">
+      <div class="wcard reveal d3" data-category="AI Agent">
         <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
         <div class="wtitle">NYX</div>
         <div class="wdesc">株価・ニュースをリアルタイム監視し、売買シグナルを通知する天才投資家AIエージェント。ポートフォリオ分析・リバランス提案まで自律対応。</div>
         <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Firebase</span><span class="wtag">Finance API</span></div>
-        <span class="warr">&#8599;</span>
+        <span class="warr">↗</span>
       </div>
-
-      <div class="wcard reveal d4">
-        <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
-        <div class="wtitle">Square x LINE</div>
-        <div class="wdesc">Squareの日次売上データを自動で画像レポート化し、LINEに毎日配信。クリニック経営者がLINEで売上をリアルタイム把握できる業務自動化ツール。</div>
-        <div class="wtech"><span class="wtag">Square API</span><span class="wtag">LINE API</span><span class="wtag">Node.js</span></div>
-        <span class="warr">&#8599;</span>
-      </div>
-
-      <a class="wcard reveal d5" href="https://koe-app-nine.vercel.app/" target="_blank">
-        <div class="wcard-top"><span class="wcat">AAC App</span><span class="wst live">live</span></div>
-        <div class="wtitle">こえ &#8212; AAC Communication</div>
-        <div class="wdesc">ALS・身体麻痺の方向けコミュニケーションアプリ。スペースキー1つで五十音・感情ボタン・チャットが操作できる。声が出なくても、想いは届く。</div>
-        <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">Firebase</span><span class="wtag">Web Speech API</span></div>
-        <span class="warr">&#8599;</span>
-      </a>
-
-      <div class="wcard reveal d6">
+      <div class="wcard reveal d4" data-category="AI Agent">
         <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
         <div class="wtitle">LENS</div>
         <div class="wdesc">マーケティング分析AIエージェント。6つの分析モード搭載、CSVアップロードからインサイトを自動抽出。</div>
         <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Firebase</span><span class="wtag">Analytics</span></div>
-        <span class="warr">&#8599;</span>
+        <span class="warr">↗</span>
       </div>
-
-      <div class="wcard reveal d1">
+      <div class="wcard reveal d5" data-category="AI Agent">
         <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
         <div class="wtitle">AXIS</div>
         <div class="wdesc">クリニック経営コンサルAIエージェント。KPIの自律検知・課題発見・改善提案まで対応するクールな知性派。</div>
         <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Firebase</span><span class="wtag">Dashboard</span></div>
-        <span class="warr">&#8599;</span>
+        <span class="warr">↗</span>
       </div>
-
+      <a class="wcard reveal d6" href="https://koe-app-nine.vercel.app/" target="_blank" data-category="App">
+        <div class="wcard-top"><span class="wcat">AAC App</span><span class="wst live">live</span></div>
+        <div class="wtitle">こえ — AAC Communication</div>
+        <div class="wdesc">ALS・身体麻痺の方向けコミュニケーションアプリ。スペースキー1つで五十音・感情ボタン・チャットが操作できる。声が出なくても、想いは届く。</div>
+        <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">Firebase</span><span class="wtag">Web Speech API</span></div>
+        <span class="warr">↗</span>
+      </a>
+      <div class="wcard reveal d1" data-category="App">
+        <div class="wcard-top"><span class="wcat">AI Chatbot</span><span class="wst live">live</span></div>
+        <div class="wtitle">ろあ</div>
+        <div class="wdesc">LORE CLINIC公式LINEのAIチャットボット。肌診断・最適メニュー提案・予約動線をClaude APIで実装。お客様の質問に24時間自動応答。</div>
+        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">LINE API</span><span class="wtag">Firebase</span></div>
+        <span class="warr">↗</span>
+      </div>
+      <div class="wcard reveal d2" data-category="Automation">
+        <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
+        <div class="wtitle">Square × LINE</div>
+        <div class="wdesc">Squareの日次売上データを自動で画像レポート化し、LINEに毎日配信。クリニック経営者がLINEで売上をリアルタイム把握できる業務自動化ツール。</div>
+        <div class="wtech"><span class="wtag">Square API</span><span class="wtag">LINE API</span><span class="wtag">Node.js</span></div>
+        <span class="warr">↗</span>
+      </div>
+      <div class="wcard reveal d3" data-category="Automation">
+        <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
+        <div class="wtitle">LINE リッチメニュー</div>
+        <div class="wdesc">LORE CLINICのLINE公式アカウントに2タブのリッチメニューを実装。予約・メニュー・SNSへの導線を一元化した業務効率化ツール。</div>
+        <div class="wtech"><span class="wtag">LINE API</span><span class="wtag">LIFF</span><span class="wtag">Firebase</span></div>
+        <span class="warr">↗</span>
+      </div>
     </div>
   </div>
 </section>
-
 <section id="contact">
   <div class="cont-w">
     <div class="reveal">
@@ -256,26 +250,38 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
       <p class="cdesc">AIプロダクト開発・エージェント構築のご相談はお気軽にどうぞ。</p>
       <div class="clinks">
         <a href="https://twitter.com/t_e_n_s_h_i_" class="clink" target="_blank">X @t_e_n_s_h_i_</a>
-        <a href="mailto:loreclinic.info@gmail.com" class="clink">Email</a>
+        <a href="#" id="email-link" class="clink">Email</a>
       </div>
     </div>
   </div>
 </section>
-
 <footer>
   <div class="flogo">yumimil</div>
-  <div class="fcopy">&#169; 2026 YUMIMIL. All rights reserved.</div>
+  <div class="fcopy">© 2026 YUMIMIL. All rights reserved.</div>
 </footer>
-
 <script>
 const cursor=document.getElementById('cursor');
 const cring=document.getElementById('cring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
-function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cring.style.left=rx+'px';cring.style.top=ry+'px';requestAnimationFrame(loop)}
-loop();
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cring.style.left=rx+'px';cring.style.top=ry+'px';requestAnimationFrame(loop)})();
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const tabs=document.querySelectorAll('.wtab');
+const cards=document.querySelectorAll('.wcard[data-category]');
+const featured=document.querySelector('.wfeat');
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const f=tab.dataset.filter;
+    featured.style.display=(f==='all'||f==='App')?'':'none';
+    cards.forEach(c=>{c.classList.toggle('hidden',f!=='all'&&c.dataset.category!==f)});
+  });
+});
+// メールリンクをJSで生成（Cloudflare対策）
+const el=document.getElementById('email-link');
+if(el){const u='loreclinic.info';const d='gmail.com';el.href='mailto:'+u+'@'+d;}
 </script>
 </body>
 </html>
