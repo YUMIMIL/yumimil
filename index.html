@@ -106,9 +106,60 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 .d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
 @media(max-width:900px){nav{padding:24px}section{padding:80px 24px}.about-grid{grid-template-columns:1fr;gap:48px}.wgrid{grid-template-columns:1fr}.wfeat{padding:32px 24px}footer{flex-direction:column;gap:16px;text-align:center}.wtabs{flex-wrap:wrap}}
+
+/* Particle canvas */
+#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* Mouse glow */
+.mouse-glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,224,.08) 0%,transparent 70%);pointer-events:none;z-index:1;transform:translate(-50%,-50%);transition:opacity .3s}
+
+/* Enhanced reveal with scale */
+.reveal{opacity:0;transform:translateY(50px) scale(.97);transition:opacity 1s cubic-bezier(.23,1,.32,1),transform 1s cubic-bezier(.23,1,.32,1)}
+.reveal.visible{opacity:1;transform:translateY(0) scale(1)}
+
+/* Split text letter animation */
+.split-char{display:inline-block;opacity:0;transform:translateY(40px) rotateX(40deg);transition:opacity .6s ease,transform .6s ease}
+.split-char.vis{opacity:1;transform:translateY(0) rotateX(0)}
+.split-char.space{width:.3em}
+
+/* Magnetic link hover glow */
+.clink,.wtab,.atag{transition:all .4s cubic-bezier(.23,1,.32,1)}
+
+/* Floating badge pulse */
+.scard{transition:all .5s cubic-bezier(.23,1,.32,1)}
+.scard:hover{border-color:rgba(201,168,224,.4);transform:translateX(8px) scale(1.02);box-shadow:0 8px 40px rgba(201,168,224,.08)}
+
+/* Smooth nav blur on scroll */
+nav{backdrop-filter:blur(0px);transition:backdrop-filter .5s,background .5s,padding .4s}
+nav.scrolled{backdrop-filter:blur(16px);background:rgba(11,11,15,.8)!important;padding-top:16px;padding-bottom:16px}
+
+/* Hero title shimmer */
+.htitle em{background-size:200% 200%;animation:shimmer 4s ease-in-out infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* Orbs enhanced float */
+.orb{transition:transform .3s}
+.o1{animation:forb1 25s ease-in-out infinite}
+.o2{animation:forb2 20s ease-in-out infinite}
+.o3{animation:forb3 18s ease-in-out infinite}
+@keyframes forb1{0%{transform:translate(0,0) scale(1)}25%{transform:translate(30px,-50px) scale(1.1)}50%{transform:translate(-20px,-30px) scale(.95)}75%{transform:translate(40px,20px) scale(1.05)}100%{transform:translate(0,0) scale(1)}}
+@keyframes forb2{0%{transform:translate(0,0) scale(1)}33%{transform:translate(-40px,30px) scale(1.15)}66%{transform:translate(25px,-45px) scale(.9)}100%{transform:translate(0,0) scale(1)}}
+@keyframes forb3{0%{transform:translate(0,0) scale(1)}20%{transform:translate(35px,25px) scale(1.08)}60%{transform:translate(-30px,-35px) scale(.92)}100%{transform:translate(0,0) scale(1)}}
+
+/* Grain texture overlay */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* Section divider glow line */
+.section-glow{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,224,.2),rgba(168,196,224,.15),transparent);margin:0}
+
+/* Wcard enhanced hover */
+.wcard{transition:all .6s cubic-bezier(.23,1,.32,1)}
+.wcard:hover{background:var(--surface);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.3),0 0 40px rgba(201,168,224,.05)}
 </style>
 </head>
 <body>
+<canvas id="particles"></canvas>
+<div class="mouse-glow" id="mglow"></div>
 <div class="cursor" id="cursor"></div>
 <div class="cring" id="cring"></div>
 <nav>
@@ -129,6 +180,7 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
   </div>
   <div class="hscroll"><span>Scroll</span><div class="scrolline"></div></div>
 </section>
+<div class="section-glow"></div>
 <section id="about">
   <div class="about-w">
     <div class="reveal">
@@ -146,13 +198,14 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
         </div>
       </div>
       <div class="aright">
-        <div class="scard reveal d2"><div class="snum">10+</div><div class="slbl">Deployed AI Products &amp; Agents</div></div>
+        <div class="scard reveal d2"><div class="snum">16+</div><div class="slbl">AI Products &amp; Agents Built</div></div>
         <div class="scard reveal d3"><div class="snum">2</div><div class="slbl">Businesses Operated (Shinjuku / Shibuya)</div></div>
         <div class="scard reveal d4"><div class="snum">∞</div><div class="slbl">Ideas in Progress</div></div>
       </div>
     </div>
   </div>
 </section>
+<div class="section-glow"></div>
 <section id="works" class="works-s">
   <div class="works-w">
     <div class="reveal">
@@ -229,16 +282,52 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
         <div class="wtech"><span class="wtag">Square API</span><span class="wtag">LINE API</span><span class="wtag">Node.js</span></div>
         <span class="warr">↗</span>
       </div>
-      <div class="wcard reveal d3" data-category="Automation">
-        <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
-        <div class="wtitle">LINE リッチメニュー</div>
-        <div class="wdesc">LORE CLINICのLINE公式アカウントに2タブのリッチメニューを実装。予約・メニュー・SNSへの導線を一元化した業務効率化ツール。</div>
-        <div class="wtech"><span class="wtag">LINE API</span><span class="wtag">LIFF</span><span class="wtag">Firebase</span></div>
+      <a class="wcard reveal d3" href="https://richmenu-lp.web.app/" target="_blank" data-category="App">
+        <div class="wcard-top"><span class="wcat">LINE Tool</span><span class="wst live">live</span></div>
+        <div class="wtitle"><em>tably</em></div>
+        <div class="wdesc">LINEリッチメニューを2タブ化するSaaSツール。予約・メニュー・SNSへの導線を1つのリッチメニューに集約し、LINE公式アカウントの体験を向上させる。</div>
+        <div class="wtech"><span class="wtag">LINE API</span><span class="wtag">LIFF</span><span class="wtag">Next.js</span></div>
+        <span class="warr">↗</span>
+      </a>
+      <div class="wcard reveal d4" data-category="AI Agent">
+        <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
+        <div class="wtitle"><em>Paletta</em></div>
+        <div class="wdesc">LP自動生成AIエージェント。URLやフィードバックから「良いデザイン」を学習し、14種類のスタイル×カラーで4パターン同時にLPを自動生成する。</div>
+        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Next.js</span><span class="wtag">Firebase</span></div>
+        <span class="warr">↗</span>
+      </div>
+      <div class="wcard reveal d5" data-category="App">
+        <div class="wcard-top"><span class="wcat">AI Education</span><span class="wst">coming soon</span></div>
+        <div class="wtitle"><em>Lumen</em></div>
+        <div class="wdesc">医学生向けAI学習支援アプリ。2人のAIキャラクターがチャットとクイズで医学生を指導。親密度システムでキャラの口調が進化する。</div>
+        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Next.js</span><span class="wtag">Firebase</span></div>
+        <span class="warr">↗</span>
+      </div>
+      <div class="wcard reveal d6" data-category="App">
+        <div class="wcard-top"><span class="wcat">Project Management</span><span class="wst">coming soon</span></div>
+        <div class="wtitle"><em>Gantt</em></div>
+        <div class="wdesc">プロダクト開発のガントチャート管理ツール。複数プロジェクトのフェーズ・優先度・マネタイズ戦略をタイムラインで可視化。ドラッグ操作で直感的に管理。</div>
+        <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">React</span><span class="wtag">Tailwind CSS</span></div>
+        <span class="warr">↗</span>
+      </div>
+      <div class="wcard reveal d1" data-category="App">
+        <div class="wcard-top"><span class="wcat">Simulation Game</span><span class="wst">coming soon</span></div>
+        <div class="wtitle"><em>SaaS Founder</em></div>
+        <div class="wdesc">SaaS経営シミュレーションゲーム。24ヶ月間でSaaS企業を経営し、MRR・ARR・チャーン率などリアルな経営指標を管理しながらPMF達成を目指す。</div>
+        <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">Firebase</span><span class="wtag">Framer Motion</span></div>
+        <span class="warr">↗</span>
+      </div>
+      <div class="wcard reveal d3" data-category="App">
+        <div class="wcard-top"><span class="wcat">AI Diagnosis</span><span class="wst">coming soon</span></div>
+        <div class="wtitle"><em>animind</em></div>
+        <div class="wdesc">AI思考タイプ診断ツール。チャットベースでプレイヤーの思考パターンを分析し、タイプを判定するAI診断アプリケーション。</div>
+        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Firebase</span></div>
         <span class="warr">↗</span>
       </div>
     </div>
   </div>
 </section>
+<div class="section-glow"></div>
 <section id="contact">
   <div class="cont-w">
     <div class="reveal">
@@ -260,13 +349,166 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
   <div class="fcopy">© 2026 YUMIMIL. All rights reserved.</div>
 </footer>
 <script>
+// --- Cursor ---
 const cursor=document.getElementById('cursor');
 const cring=document.getElementById('cring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
-(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cring.style.left=rx+'px';cring.style.top=ry+'px';requestAnimationFrame(loop)})();
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+const mglow=document.getElementById('mglow');
+let mx=0,my=0,rx=0,ry=0,gx=0,gy=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cursor.style.left=mx+'px';cursor.style.top=my+'px';
+});
+(function cloop(){
+  rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
+  gx+=(mx-gx)*.06;gy+=(my-gy)*.06;
+  cring.style.left=rx+'px';cring.style.top=ry+'px';
+  mglow.style.left=gx+'px';mglow.style.top=gy+'px';
+  requestAnimationFrame(cloop);
+})();
+
+// --- Particle system ---
+const cvs=document.getElementById('particles');
+const ctx=cvs.getContext('2d');
+let W,H;
+function resize(){W=cvs.width=window.innerWidth;H=cvs.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+const pts=[];
+for(let i=0;i<60;i++){
+  pts.push({
+    x:Math.random()*W,y:Math.random()*H,
+    vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,
+    r:Math.random()*1.5+.5,
+    a:Math.random()*.4+.1,
+    col:[
+      'rgba(201,168,224,','rgba(168,196,224,','rgba(240,196,212,'
+    ][Math.floor(Math.random()*3)]
+  });
+}
+function drawParticles(){
+  ctx.clearRect(0,0,W,H);
+  pts.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+    if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    // Twinkle
+    p.a+=Math.sin(Date.now()*.002+p.x)*.003;
+    p.a=Math.max(.05,Math.min(.5,p.a));
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=p.col+p.a+')';
+    ctx.fill();
+  });
+  // Connect nearby particles
+  for(let i=0;i<pts.length;i++){
+    for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<120){
+        ctx.beginPath();
+        ctx.moveTo(pts[i].x,pts[i].y);
+        ctx.lineTo(pts[j].x,pts[j].y);
+        ctx.strokeStyle='rgba(201,168,224,'+(1-dist/120)*.06+')';
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
+
+// --- Scroll reveal ---
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{
+  if(e.isIntersecting){
+    e.target.classList.add('visible');
+    // Trigger split text animation
+    const chars=e.target.querySelectorAll('.split-char');
+    chars.forEach((c,i)=>{setTimeout(()=>c.classList.add('vis'),i*35)});
+  }
+})},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// --- Split text for titles ---
+function splitText(el){
+  const text=el.textContent;
+  el.innerHTML='';
+  el.style.perspective='600px';
+  for(const ch of text){
+    const span=document.createElement('span');
+    span.classList.add('split-char');
+    if(ch===' '||ch==='\n'){span.classList.add('space');span.innerHTML='&nbsp;';}
+    else{span.textContent=ch;}
+    el.appendChild(span);
+  }
+}
+// Apply to section titles
+document.querySelectorAll('.stitle').forEach(t=>{
+  // Preserve em tags
+  const html=t.innerHTML;
+  const temp=document.createElement('div');
+  temp.innerHTML=html;
+  t.innerHTML='';
+  t.style.perspective='600px';
+  temp.childNodes.forEach(node=>{
+    if(node.nodeType===3){
+      // Text node
+      for(const ch of node.textContent){
+        const span=document.createElement('span');
+        span.classList.add('split-char');
+        if(ch===' '||ch==='\n'){span.classList.add('space');span.innerHTML='&nbsp;';}
+        else{span.textContent=ch;}
+        t.appendChild(span);
+      }
+    } else if(node.tagName==='EM'){
+      for(const ch of node.textContent){
+        const span=document.createElement('span');
+        span.classList.add('split-char');
+        span.style.color='var(--a1)';
+        span.style.fontStyle='italic';
+        if(ch===' '){span.classList.add('space');span.innerHTML='&nbsp;';}
+        else{span.textContent=ch;}
+        t.appendChild(span);
+      }
+    } else if(node.tagName==='BR'){
+      t.appendChild(document.createElement('br'));
+    }
+  });
+});
+
+// --- Nav scroll effect ---
+const navEl=document.querySelector('nav');
+window.addEventListener('scroll',()=>{
+  navEl.classList.toggle('scrolled',window.scrollY>80);
+},{passive:true});
+
+// --- Parallax on hero elements ---
+const heroC=document.querySelector('.hero-c');
+const orbs=document.querySelectorAll('.orb');
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  if(sy<window.innerHeight){
+    const r=sy/window.innerHeight;
+    heroC.style.transform='translateY('+sy*.15+'px) scale('+(1-r*.05)+')';
+    heroC.style.opacity=1-r*.8;
+    orbs.forEach((o,i)=>{
+      o.style.transform='translateY('+sy*(.08+i*.04)+'px)';
+    });
+  }
+},{passive:true});
+
+// --- Magnetic hover for links ---
+document.querySelectorAll('.clink').forEach(link=>{
+  link.addEventListener('mousemove',e=>{
+    const r=link.getBoundingClientRect();
+    const x=e.clientX-r.left-r.width/2;
+    const y=e.clientY-r.top-r.height/2;
+    link.style.transform='translate('+x*.2+'px,'+y*.2+'px)';
+  });
+  link.addEventListener('mouseleave',()=>{
+    link.style.transform='translate(0,0)';
+  });
+});
+
+// --- Works filter ---
 const tabs=document.querySelectorAll('.wtab');
 const cards=document.querySelectorAll('.wcard[data-category]');
 const featured=document.querySelector('.wfeat');
@@ -279,7 +521,8 @@ tabs.forEach(tab=>{
     cards.forEach(c=>{c.classList.toggle('hidden',f!=='all'&&c.dataset.category!==f)});
   });
 });
-// メールリンクをJSで生成（Cloudflare対策）
+
+// --- Email link ---
 const el=document.getElementById('email-link');
 if(el){const u='loreclinic.info';const d='gmail.com';el.href='mailto:'+u+'@'+d;}
 </script>
