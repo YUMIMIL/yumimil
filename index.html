@@ -155,6 +155,15 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;o
 /* Wcard enhanced hover */
 .wcard{transition:all .6s cubic-bezier(.23,1,.32,1)}
 .wcard:hover{background:var(--surface);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.3),0 0 40px rgba(201,168,224,.05)}
+
+/* Timeline year divider */
+.wyear{grid-column:1/-1;display:flex;align-items:center;gap:20px;padding:32px 0 12px}
+.wyear-label{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--a1);line-height:1;white-space:nowrap}
+.wyear-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,224,.3),transparent)}
+.wyear:first-child{padding-top:0}
+
+/* Date label in cards */
+.wdate{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(201,168,224,.4)}
 </style>
 </head>
 <body>
@@ -218,14 +227,53 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;o
       <button class="wtab" data-filter="App">App</button>
       <button class="wtab" data-filter="Automation">Automation</button>
     </div>
-    <div class="wfeat reveal d2" data-category="App">
-      <div class="wcard-top"><span class="wcat">Emotional AI</span><span class="wst">coming soon</span></div>
-      <div class="wtitle"><em>AI Kanojo</em></div>
-      <div class="wdesc">LINE風UIで展開するAI彼氏・彼女シミュレーション。複数キャラクターが実在する街のスポットを提案し、写真を送ってくる——感情設計を極めたAIプロダクト。</div>
-      <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">React</span><span class="wtag">Emotion Design</span></div>
-      <span class="warr">↗</span>
-    </div>
     <div class="wgrid">
+      <!-- 2025 -->
+      <div class="wyear reveal"><div class="wyear-label">2025</div><div class="wyear-line"></div></div>
+      <div class="wcard reveal d1" data-category="App">
+        <div class="wcard-top"><span class="wcat">AI Chatbot</span><span class="wst live">live</span></div>
+        <div class="wtitle">ろあ</div>
+        <div class="wdesc">LORE CLINIC公式LINEのAIチャットボット。肌診断・最適メニュー提案・予約動線をClaude APIで実装。お客様の質問に24時間自動応答。</div>
+        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">LINE API</span><span class="wtag">Firebase</span></div>
+        <span class="warr">↗</span>
+      </div>
+      <div class="wcard reveal d2" data-category="Automation">
+        <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
+        <div class="wtitle">Square × LINE</div>
+        <div class="wdesc">Squareの日次売上データを自動で画像レポート化し、LINEに毎日配信。クリニック経営者がLINEで売上をリアルタイム把握できる業務自動化ツール。</div>
+        <div class="wtech"><span class="wtag">Square API</span><span class="wtag">LINE API</span><span class="wtag">Node.js</span></div>
+        <span class="warr">↗</span>
+      </div>
+      <a class="wcard reveal d3" href="https://richmenu-lp.web.app/" target="_blank" data-category="App">
+        <div class="wcard-top"><span class="wcat">LINE Tool</span><span class="wst live">live</span></div>
+        <div class="wtitle"><em>tably</em></div>
+        <div class="wdesc">LINEリッチメニューを2タブ化するSaaSツール。予約・メニュー・SNSへの導線を1つのリッチメニューに集約し、LINE公式アカウントの体験を向上させる。</div>
+        <div class="wtech"><span class="wtag">LINE API</span><span class="wtag">LIFF</span><span class="wtag">Next.js</span></div>
+        <span class="warr">↗</span>
+      </a>
+      <a class="wcard reveal d4" href="https://koe-app-nine.vercel.app/" target="_blank" data-category="App">
+        <div class="wcard-top"><span class="wcat">AAC App</span><span class="wst live">live</span></div>
+        <div class="wtitle">こえ — AAC Communication</div>
+        <div class="wdesc">ALS・身体麻痺の方向けコミュニケーションアプリ。スペースキー1つで五十音・感情ボタン・チャットが操作できる。声が出なくても、想いは届く。</div>
+        <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">Firebase</span><span class="wtag">Web Speech API</span></div>
+        <span class="warr">↗</span>
+      </a>
+      <div class="wcard reveal d5" data-category="Automation">
+        <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
+        <div class="wtitle">CLINIC 納品管理自動化</div>
+        <div class="wdesc">Googleドライブの納品書PDF（複数フォーマット対応）をClaude APIで自動解析し、毎日21時にLINEグループへFlex Messageで通知。納品管理業務を完全自動化。</div>
+        <div class="wtech"><span class="wtag">GAS</span><span class="wtag">Claude API</span><span class="wtag">LINE Messaging API</span></div>
+        <span class="warr">↗</span>
+      </div>
+      <a class="wcard reveal d6" href="https://kira-coral-two.vercel.app/" target="_blank" data-category="AI Agent">
+        <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst live">live</span></div>
+        <div class="wtitle">Kira</div>
+        <div class="wdesc">夢見がちな東京在住AIエージェント。独自のGitHubリポジトリ・X・Firebaseメモリシステムを持つ自律型AI。</div>
+        <div class="wtech"><span class="wtag">Firebase</span><span class="wtag">Claude API</span><span class="wtag">GitHub</span></div>
+        <span class="warr">↗</span>
+      </a>
+      <!-- 2026 -->
+      <div class="wyear reveal"><div class="wyear-label">2026</div><div class="wyear-line"></div></div>
       <div class="wcard reveal d1" data-category="AI Agent">
         <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
         <div class="wtitle">HANA</div>
@@ -233,13 +281,13 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;o
         <div class="wtech"><span class="wtag">Firebase</span><span class="wtag">Claude API</span><span class="wtag">Instagram API</span></div>
         <span class="warr">↗</span>
       </div>
-      <a class="wcard reveal d2" href="https://kira-coral-two.vercel.app/" target="_blank" data-category="AI Agent">
-        <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst live">live</span></div>
-        <div class="wtitle">Kira</div>
-        <div class="wdesc">夢見がちな東京在住AIエージェント。独自のGitHubリポジトリ・X・Firebaseメモリシステムを持つ自律型AI。</div>
-        <div class="wtech"><span class="wtag">Firebase</span><span class="wtag">Claude API</span><span class="wtag">GitHub</span></div>
+      <div class="wcard reveal d2" data-category="App">
+        <div class="wcard-top"><span class="wcat">Emotional AI</span><span class="wst">dev</span></div>
+        <div class="wtitle"><em>AI Kanojo</em></div>
+        <div class="wdesc">LINE風UIで展開するAI彼氏・彼女シミュレーション。複数キャラクターが実在する街のスポットを提案し、写真を送ってくる——感情設計を極めたAIプロダクト。</div>
+        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">React</span><span class="wtag">Emotion Design</span></div>
         <span class="warr">↗</span>
-      </a>
+      </div>
       <div class="wcard reveal d3" data-category="AI Agent">
         <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
         <div class="wtitle">NYX</div>
@@ -261,70 +309,35 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;o
         <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Firebase</span><span class="wtag">Dashboard</span></div>
         <span class="warr">↗</span>
       </div>
-      <a class="wcard reveal d6" href="https://koe-app-nine.vercel.app/" target="_blank" data-category="App">
-        <div class="wcard-top"><span class="wcat">AAC App</span><span class="wst live">live</span></div>
-        <div class="wtitle">こえ — AAC Communication</div>
-        <div class="wdesc">ALS・身体麻痺の方向けコミュニケーションアプリ。スペースキー1つで五十音・感情ボタン・チャットが操作できる。声が出なくても、想いは届く。</div>
-        <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">Firebase</span><span class="wtag">Web Speech API</span></div>
-        <span class="warr">↗</span>
-      </a>
-      <div class="wcard reveal d1" data-category="App">
-        <div class="wcard-top"><span class="wcat">AI Chatbot</span><span class="wst live">live</span></div>
-        <div class="wtitle">ろあ</div>
-        <div class="wdesc">LORE CLINIC公式LINEのAIチャットボット。肌診断・最適メニュー提案・予約動線をClaude APIで実装。お客様の質問に24時間自動応答。</div>
-        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">LINE API</span><span class="wtag">Firebase</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d2" data-category="Automation">
-        <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
-        <div class="wtitle">Square × LINE</div>
-        <div class="wdesc">Squareの日次売上データを自動で画像レポート化し、LINEに毎日配信。クリニック経営者がLINEで売上をリアルタイム把握できる業務自動化ツール。</div>
-        <div class="wtech"><span class="wtag">Square API</span><span class="wtag">LINE API</span><span class="wtag">Node.js</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d3" data-category="Automation">
-        <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
-        <div class="wtitle">CLINIC 納品管理自動化</div>
-        <div class="wdesc">Googleドライブの納品書PDF（複数フォーマット対応）をClaude APIで自動解析し、毎日21時にLINEグループへFlex Messageで通知。納品管理業務を完全自動化。</div>
-        <div class="wtech"><span class="wtag">GAS</span><span class="wtag">Claude API</span><span class="wtag">LINE Messaging API</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <a class="wcard reveal d3" href="https://richmenu-lp.web.app/" target="_blank" data-category="App">
-        <div class="wcard-top"><span class="wcat">LINE Tool</span><span class="wst live">live</span></div>
-        <div class="wtitle"><em>tably</em></div>
-        <div class="wdesc">LINEリッチメニューを2タブ化するSaaSツール。予約・メニュー・SNSへの導線を1つのリッチメニューに集約し、LINE公式アカウントの体験を向上させる。</div>
-        <div class="wtech"><span class="wtag">LINE API</span><span class="wtag">LIFF</span><span class="wtag">Next.js</span></div>
-        <span class="warr">↗</span>
-      </a>
-      <div class="wcard reveal d4" data-category="AI Agent">
+      <div class="wcard reveal d6" data-category="AI Agent">
         <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
         <div class="wtitle"><em>Paletta</em></div>
         <div class="wdesc">LP自動生成AIエージェント。URLやフィードバックから「良いデザイン」を学習し、14種類のスタイル×カラーで4パターン同時にLPを自動生成する。</div>
         <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Next.js</span><span class="wtag">Firebase</span></div>
         <span class="warr">↗</span>
       </div>
-      <div class="wcard reveal d5" data-category="App">
+      <div class="wcard reveal d1" data-category="App">
         <div class="wcard-top"><span class="wcat">AI Education</span><span class="wst">coming soon</span></div>
         <div class="wtitle"><em>Lumen</em></div>
         <div class="wdesc">医学生向けAI学習支援アプリ。2人のAIキャラクターがチャットとクイズで医学生を指導。親密度システムでキャラの口調が進化する。</div>
         <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Next.js</span><span class="wtag">Firebase</span></div>
         <span class="warr">↗</span>
       </div>
-      <div class="wcard reveal d6" data-category="App">
+      <div class="wcard reveal d2" data-category="App">
         <div class="wcard-top"><span class="wcat">Project Management</span><span class="wst">coming soon</span></div>
         <div class="wtitle"><em>Gantt</em></div>
         <div class="wdesc">プロダクト開発のガントチャート管理ツール。複数プロジェクトのフェーズ・優先度・マネタイズ戦略をタイムラインで可視化。ドラッグ操作で直感的に管理。</div>
         <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">React</span><span class="wtag">Tailwind CSS</span></div>
         <span class="warr">↗</span>
       </div>
-      <div class="wcard reveal d1" data-category="App">
+      <div class="wcard reveal d3" data-category="App">
         <div class="wcard-top"><span class="wcat">Simulation Game</span><span class="wst">coming soon</span></div>
         <div class="wtitle"><em>SaaS Founder</em></div>
         <div class="wdesc">SaaS経営シミュレーションゲーム。24ヶ月間でSaaS企業を経営し、MRR・ARR・チャーン率などリアルな経営指標を管理しながらPMF達成を目指す。</div>
         <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">Firebase</span><span class="wtag">Framer Motion</span></div>
         <span class="warr">↗</span>
       </div>
-      <div class="wcard reveal d3" data-category="App">
+      <div class="wcard reveal d4" data-category="App">
         <div class="wcard-top"><span class="wcat">AI Diagnosis</span><span class="wst">coming soon</span></div>
         <div class="wtitle"><em>animind</em></div>
         <div class="wdesc">AI思考タイプ診断ツール。チャットベースでプレイヤーの思考パターンを分析し、タイプを判定するAI診断アプリケーション。</div>
@@ -518,14 +531,23 @@ document.querySelectorAll('.clink').forEach(link=>{
 // --- Works filter ---
 const tabs=document.querySelectorAll('.wtab');
 const cards=document.querySelectorAll('.wcard[data-category]');
-const featured=document.querySelector('.wfeat');
+const yearDividers=document.querySelectorAll('.wyear');
 tabs.forEach(tab=>{
   tab.addEventListener('click',()=>{
     tabs.forEach(t=>t.classList.remove('active'));
     tab.classList.add('active');
     const f=tab.dataset.filter;
-    featured.style.display=(f==='all'||f==='App')?'':'none';
     cards.forEach(c=>{c.classList.toggle('hidden',f!=='all'&&c.dataset.category!==f)});
+    // Hide year dividers if all cards in that section are hidden
+    yearDividers.forEach(yd=>{
+      let sib=yd.nextElementSibling;
+      let anyVisible=false;
+      while(sib&&!sib.classList.contains('wyear')){
+        if(sib.dataset.category&&!sib.classList.contains('hidden'))anyVisible=true;
+        sib=sib.nextElementSibling;
+      }
+      yd.style.display=anyVisible?'':'none';
+    });
   });
 });
 
