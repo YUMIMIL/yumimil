@@ -4,7 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YUMIMIL — AI Creator</title>
+<meta name="description" content="医療×テック×感情設計。AIエージェント・プロダクト開発を行うクリエイター YUMIMIL のポートフォリオ。Claude APIやFirebaseで、人の心が動くAI体験をつくる。">
+<link rel="canonical" href="https://yumimil.com/">
+<meta name="theme-color" content="#0b0b0f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YUMIMIL">
+<meta property="og:title" content="YUMIMIL — AI Creator">
+<meta property="og:description" content="医療×テック×感情設計。AIを使って、人の心が動く体験をつくるクリエイターのポートフォリオ。">
+<meta property="og:url" content="https://yumimil.com/">
+<meta property="og:image" content="https://yumimil.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@t_e_n_s_h_i_">
+<meta name="twitter:title" content="YUMIMIL — AI Creator">
+<meta name="twitter:description" content="医療×テック×感情設計。AIを使って、人の心が動く体験をつくるクリエイターのポートフォリオ。">
+<meta name="twitter:image" content="https://yumimil.com/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0f'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23c9a8e0' text-anchor='middle'%3Ey%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"YUMIMIL","url":"https://yumimil.com/","jobTitle":"AI Creator","sameAs":["https://twitter.com/t_e_n_s_h_i_"],"knowsAbout":["AI Agents","Claude API","Firebase","Next.js","TypeScript"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -88,6 +110,7 @@ section{padding:120px 48px}
 .wtech{display:flex;flex-wrap:wrap;gap:6px}
 .wtag{font-family:'Space Mono',monospace;font-size:9px;color:rgba(201,168,224,.6);border:1px solid rgba(201,168,224,.15);padding:3px 8px;letter-spacing:.05em}
 .warr{position:absolute;bottom:28px;right:28px;font-size:18px;color:var(--border);transition:all .4s}
+div.wcard .warr{display:none}
 .wcard:hover .warr,.wfeat:hover .warr{color:var(--a1);transform:translate(4px,-4px)}
 .cont-w{max-width:1200px;margin:0 auto;text-align:center}
 .cont-i{margin-top:60px}
@@ -223,6 +246,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;o
 /* Date label in cards */
 .wdate{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(201,168,224,.4)}
 </style>
+<noscript><style>.reveal{opacity:1;transform:none}.hlabel,.htitle,.hsub,.hscroll{opacity:1;animation:none}</style></noscript>
 </head>
 <body>
 <canvas id="particles"></canvas>
@@ -291,7 +315,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;o
       <div class="wcard reveal d1" data-category="App">
         <div class="wcard-top"><span class="wcat">AI Chatbot</span><span class="wst live">live</span></div>
         <div class="wtitle">ろあ</div>
-        <div class="wdesc">LORE CLINIC公式LINEのAIチャットボット。肌診断・最適メニュー提案・予約動線をClaude APIで実装。お客様の質問に24時間自動応答。</div>
+        <div class="wdesc">美容クリニック公式LINEのAIチャットボット。肌診断・最適メニュー提案・予約動線をClaude APIで実装。お客様の質問に24時間自動応答。</div>
         <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">LINE API</span><span class="wtag">Firebase</span></div>
         <span class="warr">↗</span>
       </div>
@@ -348,7 +372,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;o
       </a>
       <div class="wcard reveal d1" data-category="Automation">
         <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
-        <div class="wtitle">CLINIC 納品管理自動化</div>
+        <div class="wtitle">クリニック納品管理自動化</div>
         <div class="wdesc">Googleドライブの納品書PDF（複数フォーマット対応）をClaude APIで自動解析し、毎日21時にLINEグループへFlex Messageで通知。納品管理業務を完全自動化。</div>
         <div class="wtech"><span class="wtag">GAS</span><span class="wtag">Claude API</span><span class="wtag">LINE Messaging API</span></div>
         <span class="warr">↗</span>
