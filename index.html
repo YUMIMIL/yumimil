@@ -6,7 +6,7 @@
 <title>YUMIMIL — AI Creator</title>
 <meta name="description" content="医療×テック×感情設計。AIエージェント・プロダクト開発を行うクリエイター YUMIMIL のポートフォリオ。Claude APIやFirebaseで、人の心が動くAI体験をつくる。">
 <link rel="canonical" href="https://yumimil.com/">
-<meta name="theme-color" content="#0b0b0f">
+<meta name="theme-color" content="#0a0a0c">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="YUMIMIL">
 <meta property="og:title" content="YUMIMIL — AI Creator">
@@ -21,646 +21,409 @@
 <meta name="twitter:title" content="YUMIMIL — AI Creator">
 <meta name="twitter:description" content="医療×テック×感情設計。AIを使って、人の心が動く体験をつくるクリエイターのポートフォリオ。">
 <meta name="twitter:image" content="https://yumimil.com/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0f'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23c9a8e0' text-anchor='middle'%3Ey%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0c'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23c9a8e0' text-anchor='middle'%3Ey%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"YUMIMIL","url":"https://yumimil.com/","jobTitle":"AI Creator","sameAs":["https://twitter.com/t_e_n_s_h_i_"],"knowsAbout":["AI Agents","Claude API","Firebase","Next.js","TypeScript"]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0b0b0f;--bg2:#111118;--surface:#16161f;--border:rgba(200,180,220,0.12);--text:#e8e4f0;--muted:#8a849a;--a1:#c9a8e0;--a2:#f0c4d4;--a3:#a8c4e0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Zen Kaku Gothic New',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
-.cursor{position:fixed;width:8px;height:8px;background:var(--a1);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width .3s,height .3s,background .3s}
-.cring{position:fixed;width:32px;height:32px;border:1px solid rgba(201,168,224,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
-body:has(a:hover) .cursor{width:12px;height:12px;background:var(--a2)}
-nav{position:fixed;top:0;left:0;right:0;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;z-index:100;background:linear-gradient(to bottom,rgba(11,11,15,.95) 0%,transparent 100%)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.3em;color:var(--text);text-decoration:none;font-weight:300;font-style:italic}
-.nav-links{display:flex;gap:40px}
-.nav-links a{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;transition:color .3s}
-.nav-links a:hover{color:var(--a1)}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 48px 80px}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 50%,rgba(168,120,200,.08) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 80% 30%,rgba(168,196,224,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 60% 80%,rgba(240,196,212,.05) 0%,transparent 60%);animation:hshift 12s ease-in-out infinite alternate}
-@keyframes hshift{0%{opacity:.6;transform:scale(1)}100%{opacity:1;transform:scale(1.05)}}
-.orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;animation:forb linear infinite}
-.o1{width:300px;height:300px;background:rgba(168,120,200,.07);top:10%;left:5%;animation-duration:25s}
-.o2{width:200px;height:200px;background:rgba(168,196,224,.07);top:60%;right:10%;animation-duration:20s;animation-delay:-8s}
-.o3{width:150px;height:150px;background:rgba(240,196,212,.07);bottom:20%;left:30%;animation-duration:18s;animation-delay:-5s}
-@keyframes forb{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(-40px) translateX(20px)}100%{transform:translateY(0) translateX(0)}}
-.hero-c{position:relative;z-index:2;text-align:center;max-width:900px}
-.hlabel{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.4em;color:var(--a1);text-transform:uppercase;opacity:0;animation:fup 1s ease .3s forwards;display:block;margin-bottom:32px}
-.htitle{font-family:'Cormorant Garamond',serif;font-size:clamp(64px,10vw,120px);font-weight:300;line-height:.95;letter-spacing:-.02em;opacity:0;animation:fup 1s ease .5s forwards}
-.htitle em{font-style:italic;background:linear-gradient(135deg,var(--a1),var(--a2),var(--a3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hsub{margin-top:40px;font-size:14px;color:var(--muted);letter-spacing:.08em;line-height:2;opacity:0;animation:fup 1s ease .8s forwards;max-width:520px;margin-left:auto;margin-right:auto}
-.hscroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:12px;opacity:0;animation:fup 1s ease 1.2s forwards}
-.hscroll span{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
-.scrolline{width:1px;height:60px;background:linear-gradient(to bottom,var(--a1),transparent);animation:sp 2s ease-in-out infinite}
-@keyframes sp{0%,100%{opacity:.3}50%{opacity:1}}
-@keyframes fup{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-section{padding:120px 48px}
-.slabel{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.4em;color:var(--a1);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:16px}
-.slabel::before{content:'';width:40px;height:1px;background:var(--a1);opacity:.5}
-.stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;line-height:1.1}
-.stitle em{font-style:italic;color:var(--a1)}
-.about-w{max-width:1200px;margin:0 auto}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:60px;align-items:start}
-.atext p{font-size:15px;line-height:2;color:rgba(232,228,240,.75);margin-bottom:20px}
-.atext p strong{color:var(--a2);font-weight:400}
-.atags{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
-.atag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--muted);border:1px solid var(--border);padding:6px 14px;transition:all .3s}
-.atag:hover{color:var(--a1);border-color:rgba(201,168,224,.4)}
-.aright{display:flex;flex-direction:column;gap:24px}
-.scard{padding:28px 32px;border:1px solid var(--border);background:var(--surface);position:relative;overflow:hidden;transition:all .4s}
-.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--a1),transparent);opacity:0;transition:opacity .4s}
-.scard:hover{border-color:rgba(201,168,224,.3);transform:translateX(8px)}
-.scard:hover::before{opacity:1}
-.snum{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--a1);line-height:1;margin-bottom:8px}
-.slbl{font-size:12px;color:var(--muted);letter-spacing:.1em}
-.works-s{background:var(--bg2)}
-.works-w{max-width:1200px;margin:0 auto}
-.wtabs{display:flex;gap:0;margin-top:48px;border-bottom:1px solid var(--border)}
-.wtab{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:none;border:none;padding:12px 24px;cursor:pointer;position:relative;transition:color .3s}
-.wtab::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;background:var(--a1);transform:scaleX(0);transition:transform .3s}
-.wtab:hover{color:var(--text)}
-.wtab.active{color:var(--a1)}
-.wtab.active::after{transform:scaleX(1)}
-.wfeat{margin-top:32px;padding:48px;border:1px solid rgba(201,168,224,.25);border-left:3px solid rgba(201,168,224,.4);background:linear-gradient(135deg,var(--surface) 0%,rgba(201,168,224,.04) 100%);position:relative;overflow:hidden;transition:border-color .4s}
-.wfeat:hover{border-color:rgba(201,168,224,.45)}
-.wfeat .wtitle{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;margin-bottom:8px;color:var(--text)}
-.wfeat .wtitle em{font-style:italic}
-.wfeat .wcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
-.wfeat .wdesc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:28px}
-.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));border-left:1px solid var(--border);border-top:1px solid var(--border)}
-.wcard{background:var(--bg2);padding:36px 32px;position:relative;overflow:hidden;transition:all .5s cubic-bezier(.23,1,.32,1);text-decoration:none;display:block;border-right:1px solid var(--border);border-bottom:1px solid var(--border);color:var(--text)}
-.wcard::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,224,.05) 0%,transparent 60%);opacity:0;transition:opacity .5s}
-.wcard:hover{background:var(--surface);transform:translateY(-3px)}
-.wcard:hover::before{opacity:1}
-.wcard.hidden{display:none}
-.wcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
-.wcat{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.3em;color:var(--a1);text-transform:uppercase}
-.wst{font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.1em}
-.wst.live{color:#7ec8a4}
-.wst.live::before{content:'● ';animation:blnk 2s ease-in-out infinite}
-@keyframes blnk{0%,100%{opacity:1}50%{opacity:.3}}
-.wtitle{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:8px;color:var(--text)}
-.wtitle em{font-style:italic}
-.wdesc{font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:20px}
-.wtech{display:flex;flex-wrap:wrap;gap:6px}
-.wtag{font-family:'Space Mono',monospace;font-size:9px;color:rgba(201,168,224,.6);border:1px solid rgba(201,168,224,.15);padding:3px 8px;letter-spacing:.05em}
-.warr{position:absolute;bottom:28px;right:28px;font-size:18px;color:var(--border);transition:all .4s}
-div.wcard .warr{display:none}
-.wcard:hover .warr,.wfeat:hover .warr{color:var(--a1);transform:translate(4px,-4px)}
-.cont-w{max-width:1200px;margin:0 auto;text-align:center}
-.cont-i{margin-top:60px}
-.cline{width:1px;height:80px;background:linear-gradient(to bottom,transparent,var(--a1),transparent);margin:0 auto 48px;opacity:.5}
-.cdesc{font-size:15px;color:var(--muted);line-height:2;max-width:480px;margin:0 auto 48px}
-.clinks{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
-.clink{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;padding:14px 32px;border:1px solid var(--border);position:relative;overflow:hidden;transition:all .4s}
-.clink::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,224,.1),rgba(168,196,224,.05));transform:translateX(-100%);transition:transform .4s}
-.clink:hover{color:var(--text);border-color:rgba(201,168,224,.4)}
-.clink:hover::before{transform:translateX(0)}
-footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.flogo{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--muted);letter-spacing:.2em}
-.fcopy{font-family:'Space Mono',monospace;font-size:10px;color:rgba(138,132,154,.5);letter-spacing:.1em}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.23,1,.32,1),transform .9s cubic-bezier(.23,1,.32,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
-.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
-/* Tablet */
-@media(max-width:900px){
-  nav{padding:24px}
-  section{padding:80px 24px}
-  .about-grid{grid-template-columns:1fr;gap:48px}
-  .wgrid{grid-template-columns:1fr}
-  .wfeat{padding:32px 24px}
-  footer{flex-direction:column;gap:16px;text-align:center}
-  .wtabs{flex-wrap:wrap}
+:root{
+  --bg:#0a0a0c;--bg-2:#101013;--surface:#141418;--surface-2:#1a1a20;
+  --line:rgba(255,255,255,.07);--line-2:rgba(255,255,255,.14);
+  --text:#ecebf2;--muted:#a19dae;--dim:#6f6b7b;
+  --accent:#c9a8e0;--accent-2:#f0c4d4;--accent-3:#a8c4e0;--live:#7ec8a4;
+  --sans:'Geist',-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic UI','Meiryo',sans-serif;
+  --serif:'Instrument Serif','Hiragino Mincho ProN','Yu Mincho','YuMincho',serif;
+  --mono:'Geist Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+  --wrap:1160px;--gutter:clamp(20px,5vw,48px);
+  --ease:cubic-bezier(.22,1,.36,1);
 }
-/* Mobile */
-@media(max-width:600px){
-  body{cursor:auto}
-  .cursor,.cring,.mouse-glow{display:none!important}
-  nav{padding:16px 20px}
-  .nav-logo{font-size:18px;letter-spacing:.2em}
-  .nav-links{gap:20px}
-  .nav-links a{font-size:9px;letter-spacing:.15em}
-  .hero{padding:100px 24px 60px;min-height:90vh}
-  .hlabel{font-size:9px;letter-spacing:.3em;margin-bottom:24px}
-  .htitle{font-size:clamp(40px,12vw,64px)}
-  .hsub{margin-top:28px;font-size:13px;letter-spacing:.04em}
-  .hscroll{bottom:24px}
-  section{padding:60px 20px}
-  .slabel{font-size:9px;letter-spacing:.3em;gap:12px}
-  .slabel::before{width:24px}
-  .stitle{font-size:clamp(28px,7vw,40px)}
-  .about-grid{gap:36px;margin-top:40px}
-  .atext p{font-size:14px;line-height:1.9}
-  .atags{gap:8px;margin-top:28px}
-  .atag{font-size:9px;padding:5px 10px}
-  .scard{padding:20px 24px}
-  .snum{font-size:36px}
-  .slbl{font-size:11px}
-  .wtabs{margin-top:32px;gap:0}
-  .wtab{padding:10px 14px;font-size:9px;letter-spacing:.15em}
-  .wgrid{border-left:none;border-top:1px solid var(--border)}
-  .wcard{padding:28px 24px;border-left:none;border-right:none}
-  .wtitle{font-size:22px}
-  .wdesc{font-size:11px;line-height:1.7}
-  .wtech{gap:5px}
-  .wtag{font-size:8px;padding:3px 6px}
-  .warr{bottom:20px;right:20px;font-size:16px}
-  .wyear{padding:24px 0 8px}
-  .wyear-label{font-size:28px}
-  .cont-i{margin-top:40px}
-  .cline{height:60px;margin-bottom:32px}
-  .cdesc{font-size:14px;margin-bottom:32px}
-  .clinks{gap:16px;flex-direction:column;align-items:center}
-  .clink{font-size:10px;padding:12px 28px;width:100%;max-width:280px;text-align:center}
-  footer{padding:32px 20px}
-  .flogo{font-size:16px}
-  .fcopy{font-size:9px}
-  .orb{opacity:.5}
-  .o1{width:180px;height:180px}
-  .o2{width:120px;height:120px}
-  .o3{width:100px;height:100px}
-  nav.scrolled{padding:12px 20px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(201,168,224,.3)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+
+/* Nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(10,10,12,.82);border-color:var(--line);-webkit-backdrop-filter:saturate(140%) blur(12px);backdrop-filter:saturate(140%) blur(12px)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--serif);font-style:italic;font-size:24px;letter-spacing:.02em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:8px 12px;border-radius:999px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--text);background:var(--surface-2)}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 20%,transparent 75%);opacity:.6;pointer-events:none}
+.aura{position:absolute;width:900px;height:900px;top:50%;left:62%;margin:-450px 0 0 -450px;background:radial-gradient(circle at 35% 40%,rgba(201,168,224,.22),transparent 45%),radial-gradient(circle at 65% 60%,rgba(168,196,224,.16),transparent 45%),radial-gradient(circle at 50% 75%,rgba(240,196,212,.12),transparent 45%);border-radius:50%;pointer-events:none;animation:spin 60s linear infinite;will-change:transform}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero .wrap{position:relative;width:100%}
+.status{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 10px;border:1px solid var(--line-2);border-radius:999px;background:rgba(20,20,24,.6);color:var(--muted)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--live);box-shadow:0 0 0 3px rgba(126,200,164,.18)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,10.5vw,136px);line-height:.95;letter-spacing:-.025em;margin:28px 0 32px}
+.hero h1 em{font-style:italic;background:linear-gradient(110deg,var(--accent) 10%,var(--accent-2) 50%,var(--accent-3) 90%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.hero-sub{font-size:clamp(15px,1.6vw,17px);color:var(--muted);line-height:2;max-width:520px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;border-radius:999px;border:1px solid var(--line-2);font-size:14px;font-weight:500;transition:background .2s,border-color .2s,transform .2s var(--ease)}
+.btn:hover{border-color:var(--muted);transform:translateY(-1px)}
+.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn.primary:hover{background:#fff}
+.btn .ar{transition:transform .2s var(--ease)}
+.btn:hover .ar{transform:translateX(3px)}
+
+/* Sections */
+section{padding:clamp(80px,12vw,140px) 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--accent);margin-bottom:16px}
+.eyebrow::before{content:'';width:24px;height:1px;background:currentColor;opacity:.6}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5.2vw,60px);line-height:1.15;letter-spacing:-.01em}
+h2 em{font-style:italic;color:var(--accent)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,7vw,96px);align-items:start}
+.about-text p{color:rgba(236,235,242,.78);margin-bottom:18px;font-size:16px;line-height:2}
+.about-text strong{color:var(--accent-2);font-weight:500}
+.quote{margin-top:28px;padding-left:20px;border-left:2px solid var(--accent);font-family:var(--serif);font-size:22px;line-height:1.6;color:var(--text)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;list-style:none}
+.chips li{font-family:var(--mono);font-size:11px;color:var(--muted);padding:6px 12px;border:1px solid var(--line-2);border-radius:999px}
+.stats{display:grid;gap:12px}
+.stat{padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--surface);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.stat b{font-family:var(--serif);font-weight:400;font-size:52px;line-height:1;color:var(--text)}
+.stat span{color:var(--muted);font-size:13px;text-align:right}
+
+/* Works */
+.works{background:var(--bg-2);border-block:1px solid var(--line)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filter{font:inherit;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:8px 14px;cursor:pointer;transition:all .2s}
+.filter:hover{color:var(--text);border-color:var(--muted)}
+.filter[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.filter .n{opacity:.55;margin-left:6px}
+.filter.live-toggle[aria-pressed="true"]{background:var(--live);border-color:var(--live)}
+.group+.group{margin-top:56px}
+.group-label{display:flex;align-items:center;gap:16px;color:var(--dim);margin-bottom:20px}
+.group-label::after{content:'';flex:1;height:1px;background:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{position:relative;display:flex;flex-direction:column;padding:28px;border:1px solid var(--line);border-radius:18px;background:var(--surface);transition:border-color .3s,background .3s,transform .3s var(--ease)}
+a.card:hover{border-color:rgba(201,168,224,.35);background:var(--surface-2);transform:translateY(-3px)}
+.card[hidden]{display:none}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.cat{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;padding:3px 10px;border-radius:999px;border:1px solid var(--line-2);color:var(--dim);white-space:nowrap}
+.badge.live{color:var(--live);border-color:rgba(126,200,164,.35);background:rgba(126,200,164,.08)}
+.badge.live::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;margin-right:6px;vertical-align:1px}
+.card h3{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.2;margin-bottom:10px;padding-right:28px}
+.card h3 em{font-style:italic}
+.card p{font-size:13px;line-height:1.85;color:var(--muted);margin-bottom:22px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none}
+.tags li{font-family:var(--mono);font-size:10.5px;color:var(--dim);padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.04)}
+.arrow{position:absolute;top:24px;right:24px;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line-2);color:var(--muted);font-size:14px;opacity:0;transform:translate(-4px,4px);transition:all .3s var(--ease)}
+a.card:hover .arrow{opacity:1;transform:none;color:var(--text);border-color:var(--accent)}
+a.card .card-head{padding-right:40px}
+.empty{color:var(--dim);padding:40px 0;text-align:center}
+
+/* Contact */
+.contact{text-align:center}
+.contact h2{font-size:clamp(44px,7vw,88px)}
+.contact p{color:var(--muted);margin:24px auto 40px;max-width:440px}
+.contact .hero-cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:32px 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--dim)}
+
+/* Reveal (JS only) */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+
+@media(max-width:860px){
+  .about-grid{grid-template-columns:1fr}
+  .aura{left:70%;width:640px;height:640px;margin:-320px 0 0 -320px}
 }
-
-/* Particle canvas */
-#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
-
-/* Mouse glow */
-.mouse-glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,224,.08) 0%,transparent 70%);pointer-events:none;z-index:1;transform:translate(-50%,-50%);transition:opacity .3s}
-
-/* Enhanced reveal with scale */
-.reveal{opacity:0;transform:translateY(50px) scale(.97);transition:opacity 1s cubic-bezier(.23,1,.32,1),transform 1s cubic-bezier(.23,1,.32,1)}
-.reveal.visible{opacity:1;transform:translateY(0) scale(1)}
-
-/* Split text letter animation */
-.split-char{display:inline-block;opacity:0;transform:translateY(40px) rotateX(40deg);transition:opacity .6s ease,transform .6s ease}
-.split-char.vis{opacity:1;transform:translateY(0) rotateX(0)}
-.split-char.space{width:.3em}
-
-/* Magnetic link hover glow */
-.clink,.wtab,.atag{transition:all .4s cubic-bezier(.23,1,.32,1)}
-
-/* Floating badge pulse */
-.scard{transition:all .5s cubic-bezier(.23,1,.32,1)}
-.scard:hover{border-color:rgba(201,168,224,.4);transform:translateX(8px) scale(1.02);box-shadow:0 8px 40px rgba(201,168,224,.08)}
-
-/* Smooth nav blur on scroll */
-nav{backdrop-filter:blur(0px);transition:backdrop-filter .5s,background .5s,padding .4s}
-nav.scrolled{backdrop-filter:blur(16px);background:rgba(11,11,15,.8)!important;padding-top:16px;padding-bottom:16px}
-
-/* Hero title shimmer */
-.htitle em{background-size:200% 200%;animation:shimmer 4s ease-in-out infinite}
-@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-
-/* Orbs enhanced float */
-.orb{transition:transform .3s}
-.o1{animation:forb1 25s ease-in-out infinite}
-.o2{animation:forb2 20s ease-in-out infinite}
-.o3{animation:forb3 18s ease-in-out infinite}
-@keyframes forb1{0%{transform:translate(0,0) scale(1)}25%{transform:translate(30px,-50px) scale(1.1)}50%{transform:translate(-20px,-30px) scale(.95)}75%{transform:translate(40px,20px) scale(1.05)}100%{transform:translate(0,0) scale(1)}}
-@keyframes forb2{0%{transform:translate(0,0) scale(1)}33%{transform:translate(-40px,30px) scale(1.15)}66%{transform:translate(25px,-45px) scale(.9)}100%{transform:translate(0,0) scale(1)}}
-@keyframes forb3{0%{transform:translate(0,0) scale(1)}20%{transform:translate(35px,25px) scale(1.08)}60%{transform:translate(-30px,-35px) scale(.92)}100%{transform:translate(0,0) scale(1)}}
-
-/* Grain texture overlay */
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-
-/* Section divider glow line */
-.section-glow{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,224,.2),rgba(168,196,224,.15),transparent);margin:0}
-
-/* Wcard enhanced hover */
-.wcard{transition:all .6s cubic-bezier(.23,1,.32,1)}
-.wcard:hover{background:var(--surface);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.3),0 0 40px rgba(201,168,224,.05)}
-
-/* Timeline year divider */
-.wyear{grid-column:1/-1;display:flex;align-items:center;gap:20px;padding:32px 0 12px}
-.wyear-label{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--a1);line-height:1;white-space:nowrap}
-.wyear-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,224,.3),transparent)}
-.wyear:first-child{padding-top:0}
-
-/* Date label in cards */
-.wdate{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(201,168,224,.4)}
+@media(max-width:560px){
+  .nav-links a{padding:8px 8px;font-size:10px}
+  .hero{padding:100px 0 64px}
+  .grid{grid-template-columns:1fr}
+  .card{padding:24px}
+  .stat{padding:22px}
+  .stat b{font-size:42px}
+  .btn{flex:1;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .aura{animation:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  *{transition-duration:.01ms!important}
+}
 </style>
-<noscript><style>.reveal{opacity:1;transform:none}.hlabel,.htitle,.hsub,.hscroll{opacity:1;animation:none}</style></noscript>
 </head>
 <body>
-<canvas id="particles"></canvas>
-<div class="mouse-glow" id="mglow"></div>
-<div class="cursor" id="cursor"></div>
-<div class="cring" id="cring"></div>
-<nav>
-  <a href="#" class="nav-logo">yumimil</a>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#works">Works</a>
-    <a href="#contact">Contact</a>
+<nav class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo">yumimil<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
-  <div class="hero-c">
-    <span class="hlabel">AI Creator · Tokyo</span>
-    <h1 class="htitle">Crafting<br><em>intelligent</em><br>experiences</h1>
-    <p class="hsub">医療×テック×感情設計。<br>AIを使って、人の心が動く体験をつくる。</p>
-  </div>
-  <div class="hscroll"><span>Scroll</span><div class="scrolline"></div></div>
-</section>
-<div class="section-glow"></div>
-<section id="about">
-  <div class="about-w">
-    <div class="reveal">
-      <div class="slabel">About</div>
-      <h2 class="stitle">医療出身の<br><em>AIクリエイター</em></h2>
+
+<header class="hero">
+  <div class="aura" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="status mono"><span class="dot"></span>AI Creator · Tokyo</span>
+    <h1>Crafting <em>intelligent</em><br>experiences.</h1>
+    <p class="hero-sub">医療×テック×感情設計。<br>AIを使って、人の心が動く体験をつくる。</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="#works">Works を見る <span class="ar">→</span></a>
+      <a class="btn" href="#contact">相談する</a>
     </div>
-    <div class="about-grid">
-      <div class="atext reveal d2">
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow mono">About</div>
+      <h2>医療出身の<br><em>AIクリエイター</em></h2>
+    </div>
+    <div class="about-grid" style="margin-top:56px">
+      <div class="about-text reveal">
         <p>美容クリニック・まつエクサロンの経営をしながら、<strong>AIエージェント・プロダクト開発</strong>を行うクリエイター。</p>
         <p>医療の現場知識とビジネス視点を持ちながら、Claude APIやFirebaseを使って<strong>感情に触れるAI体験</strong>を設計することを得意とする。</p>
-        <p>「努力を最小化して、体験の質を最大化する」——それがYUMIMILの設計思想。</p>
-        <div class="atags">
-          <span class="atag">Claude API</span><span class="atag">Firebase</span><span class="atag">Next.js</span>
-          <span class="atag">TypeScript</span><span class="atag">AI Agent</span><span class="atag">Stripe</span><span class="atag">LINE API</span>
-        </div>
+        <p class="quote">「努力を最小化して、体験の質を最大化する」<br>——それがYUMIMILの設計思想。</p>
+        <ul class="chips">
+          <li>Claude API</li><li>Firebase</li><li>Next.js</li><li>TypeScript</li><li>AI Agent</li><li>Stripe</li><li>LINE API</li>
+        </ul>
       </div>
-      <div class="aright">
-        <div class="scard reveal d2"><div class="snum">16+</div><div class="slbl">AI Products &amp; Agents Built</div></div>
-        <div class="scard reveal d3"><div class="snum">2</div><div class="slbl">Businesses Operated (Shinjuku / Shibuya)</div></div>
-        <div class="scard reveal d4"><div class="snum">∞</div><div class="slbl">Ideas in Progress</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="section-glow"></div>
-<section id="works" class="works-s">
-  <div class="works-w">
-    <div class="reveal">
-      <div class="slabel">Works</div>
-      <h2 class="stitle">つくってきたもの</h2>
-    </div>
-    <div class="wtabs reveal d1">
-      <button class="wtab active" data-filter="all">All</button>
-      <button class="wtab" data-filter="AI Agent">AI Agent</button>
-      <button class="wtab" data-filter="App">App</button>
-      <button class="wtab" data-filter="Automation">Automation</button>
-    </div>
-    <div class="wgrid">
-      <!-- 2026.03 -->
-      <div class="wyear reveal"><div class="wyear-label">2026.03</div><div class="wyear-line"></div></div>
-      <div class="wcard reveal d1" data-category="App">
-        <div class="wcard-top"><span class="wcat">AI Chatbot</span><span class="wst live">live</span></div>
-        <div class="wtitle">ろあ</div>
-        <div class="wdesc">美容クリニック公式LINEのAIチャットボット。肌診断・最適メニュー提案・予約動線をClaude APIで実装。お客様の質問に24時間自動応答。</div>
-        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">LINE API</span><span class="wtag">Firebase</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d2" data-category="Automation">
-        <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
-        <div class="wtitle">Square × LINE</div>
-        <div class="wdesc">Squareの日次売上データを自動で画像レポート化し、LINEに毎日配信。クリニック経営者がLINEで売上をリアルタイム把握できる業務自動化ツール。</div>
-        <div class="wtech"><span class="wtag">Square API</span><span class="wtag">LINE API</span><span class="wtag">Node.js</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <a class="wcard reveal d3" href="https://richmenu-lp.web.app/" target="_blank" data-category="App">
-        <div class="wcard-top"><span class="wcat">LINE Tool</span><span class="wst live">live</span></div>
-        <div class="wtitle"><em>tably</em></div>
-        <div class="wdesc">LINEリッチメニューを2タブ化するSaaSツール。予約・メニュー・SNSへの導線を1つのリッチメニューに集約し、LINE公式アカウントの体験を向上させる。</div>
-        <div class="wtech"><span class="wtag">LINE API</span><span class="wtag">LIFF</span><span class="wtag">Next.js</span></div>
-        <span class="warr">↗</span>
-      </a>
-      <a class="wcard reveal d4" href="https://koe-app-nine.vercel.app/" target="_blank" data-category="App">
-        <div class="wcard-top"><span class="wcat">AAC App</span><span class="wst live">live</span></div>
-        <div class="wtitle">こえ — AAC Communication</div>
-        <div class="wdesc">ALS・身体麻痺の方向けコミュニケーションアプリ。スペースキー1つで五十音・感情ボタン・チャットが操作できる。声が出なくても、想いは届く。</div>
-        <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">Firebase</span><span class="wtag">Web Speech API</span></div>
-        <span class="warr">↗</span>
-      </a>
-      <a class="wcard reveal d5" href="https://kira-coral-two.vercel.app/" target="_blank" data-category="AI Agent">
-        <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst live">live</span></div>
-        <div class="wtitle">Kira</div>
-        <div class="wdesc">夢見がちな東京在住AIエージェント。独自のGitHubリポジトリ・X・Firebaseメモリシステムを持つ自律型AI。</div>
-        <div class="wtech"><span class="wtag">Firebase</span><span class="wtag">Claude API</span><span class="wtag">GitHub</span></div>
-        <span class="warr">↗</span>
-      </a>
-      <!-- 2026.04 -->
-      <div class="wyear reveal"><div class="wyear-label">2026.04</div><div class="wyear-line"></div></div>
-      <a class="wcard reveal d1" href="https://reborn-guardian.vercel.app" target="_blank" data-category="Mini App">
-        <div class="wcard-top"><span class="wcat">Mini App</span><span class="wst live">live</span></div>
-        <div class="wtitle">守護者診断</div>
-        <div class="wdesc">『家庭教師ヒットマンREBORN!』の7つの炎属性で自分のタイプを診断するミニアプリ。10問の直感式質問で守護者タイプを判定。</div>
-        <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">React</span><span class="wtag">Vercel</span></div>
-        <span class="warr">↗</span>
-      </a>
-      <a class="wcard reveal d1" href="https://pigment.yumimil.com" target="_blank" data-category="Tool">
-        <div class="wcard-top"><span class="wcat">Design Tool</span><span class="wst live">live</span></div>
-        <div class="wtitle">PIGMENT</div>
-        <div class="wdesc">画像から自動でカラーパレットを抽出するWebツール。K-means++で最大10色を抽出し、CSS・Tailwind・Figma Variables・JSONで即エクスポート。画像はブラウザ内で処理。</div>
-        <div class="wtech"><span class="wtag">K-means++</span><span class="wtag">Stripe</span><span class="wtag">Google OAuth</span></div>
-        <span class="warr">↗</span>
-      </a>
-      <a class="wcard reveal d2" href="https://yurari-pwa.vercel.app" target="_blank" data-category="App">
-        <div class="wcard-top"><span class="wcat">Puzzle Game</span><span class="wst live">live</span></div>
-        <div class="wtitle"><em>ゆらり</em></div>
-        <div class="wdesc">パステルカラーで揺らぐマッチ3パズルPWA。同じ色のピースを3つ以上つなげて消し、コンボとレベルで段階的に進行する。心がほどけるカジュアルゲーム。</div>
-        <div class="wtech"><span class="wtag">PWA</span><span class="wtag">JavaScript</span><span class="wtag">Canvas</span></div>
-        <span class="warr">↗</span>
-      </a>
-      <div class="wcard reveal d1" data-category="Automation">
-        <div class="wcard-top"><span class="wcat">Business Automation</span><span class="wst live">live</span></div>
-        <div class="wtitle">クリニック納品管理自動化</div>
-        <div class="wdesc">Googleドライブの納品書PDF（複数フォーマット対応）をClaude APIで自動解析し、毎日21時にLINEグループへFlex Messageで通知。納品管理業務を完全自動化。</div>
-        <div class="wtech"><span class="wtag">GAS</span><span class="wtag">Claude API</span><span class="wtag">LINE Messaging API</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d1" data-category="AI Agent">
-        <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
-        <div class="wtitle">HANA</div>
-        <div class="wdesc">クリニック向けSNS・コンテンツ運用AIエージェント。「おまかせモード」で月次コンテンツを全自動生成。</div>
-        <div class="wtech"><span class="wtag">Firebase</span><span class="wtag">Claude API</span><span class="wtag">Instagram API</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d2" data-category="App">
-        <div class="wcard-top"><span class="wcat">Emotional AI</span><span class="wst">dev</span></div>
-        <div class="wtitle"><em>AI Kanojo</em></div>
-        <div class="wdesc">LINE風UIで展開するAI彼氏・彼女シミュレーション。複数キャラクターが実在する街のスポットを提案し、写真を送ってくる——感情設計を極めたAIプロダクト。</div>
-        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">React</span><span class="wtag">Emotion Design</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <a class="wcard reveal d3" href="https://nyx-trader.vercel.app/" target="_blank" data-category="AI Agent">
-        <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst live">live</span></div>
-        <div class="wtitle">NYX</div>
-        <div class="wdesc">株価・ニュースをリアルタイム監視し、売買シグナルを通知する天才投資家AIエージェント。ポートフォリオ分析・リバランス提案まで自律対応。</div>
-        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Firebase</span><span class="wtag">Finance API</span></div>
-        <span class="warr">↗</span>
-      </a>
-      <div class="wcard reveal d4" data-category="AI Agent">
-        <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
-        <div class="wtitle">LENS</div>
-        <div class="wdesc">マーケティング分析AIエージェント。6つの分析モード搭載、CSVアップロードからインサイトを自動抽出。</div>
-        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Firebase</span><span class="wtag">Analytics</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d5" data-category="AI Agent">
-        <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
-        <div class="wtitle">AXIS</div>
-        <div class="wdesc">クリニック経営コンサルAIエージェント。KPIの自律検知・課題発見・改善提案まで対応するクールな知性派。</div>
-        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Firebase</span><span class="wtag">Dashboard</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d6" data-category="AI Agent">
-        <div class="wcard-top"><span class="wcat">AI Agent</span><span class="wst">coming soon</span></div>
-        <div class="wtitle"><em>Paletta</em></div>
-        <div class="wdesc">LP自動生成AIエージェント。URLやフィードバックから「良いデザイン」を学習し、14種類のスタイル×カラーで4パターン同時にLPを自動生成する。</div>
-        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Next.js</span><span class="wtag">Firebase</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d1" data-category="App">
-        <div class="wcard-top"><span class="wcat">AI Education</span><span class="wst">coming soon</span></div>
-        <div class="wtitle"><em>Lumen</em></div>
-        <div class="wdesc">医学生向けAI学習支援アプリ。2人のAIキャラクターがチャットとクイズで医学生を指導。親密度システムでキャラの口調が進化する。</div>
-        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Next.js</span><span class="wtag">Firebase</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d2" data-category="App">
-        <div class="wcard-top"><span class="wcat">Project Management</span><span class="wst">coming soon</span></div>
-        <div class="wtitle"><em>Gantt</em></div>
-        <div class="wdesc">プロダクト開発のガントチャート管理ツール。複数プロジェクトのフェーズ・優先度・マネタイズ戦略をタイムラインで可視化。ドラッグ操作で直感的に管理。</div>
-        <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">React</span><span class="wtag">Tailwind CSS</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d3" data-category="App">
-        <div class="wcard-top"><span class="wcat">Simulation Game</span><span class="wst">coming soon</span></div>
-        <div class="wtitle"><em>SaaS Founder</em></div>
-        <div class="wdesc">SaaS経営シミュレーションゲーム。24ヶ月間でSaaS企業を経営し、MRR・ARR・チャーン率などリアルな経営指標を管理しながらPMF達成を目指す。</div>
-        <div class="wtech"><span class="wtag">Next.js</span><span class="wtag">Firebase</span><span class="wtag">Framer Motion</span></div>
-        <span class="warr">↗</span>
-      </div>
-      <div class="wcard reveal d4" data-category="App">
-        <div class="wcard-top"><span class="wcat">AI Diagnosis</span><span class="wst">coming soon</span></div>
-        <div class="wtitle"><em>animind</em></div>
-        <div class="wdesc">AI思考タイプ診断ツール。チャットベースでプレイヤーの思考パターンを分析し、タイプを判定するAI診断アプリケーション。</div>
-        <div class="wtech"><span class="wtag">Claude API</span><span class="wtag">Firebase</span></div>
-        <span class="warr">↗</span>
+      <div class="stats reveal">
+        <div class="stat"><b>16+</b><span>AI Products &amp; Agents Built</span></div>
+        <div class="stat"><b>2</b><span>Businesses Operated<br>(Shinjuku / Shibuya)</span></div>
+        <div class="stat"><b>∞</b><span>Ideas in Progress</span></div>
       </div>
     </div>
   </div>
 </section>
-<div class="section-glow"></div>
-<section id="contact">
-  <div class="cont-w">
-    <div class="reveal">
-      <div class="slabel" style="justify-content:center">Contact</div>
-      <h2 class="stitle">一緒に<em>つくりませんか</em></h2>
-    </div>
-    <div class="cont-i reveal d2">
-      <div class="cline"></div>
-      <p class="cdesc">AIプロダクト開発・エージェント構築のご相談はお気軽にどうぞ。</p>
-      <div class="clinks">
-        <a href="https://twitter.com/t_e_n_s_h_i_" class="clink" target="_blank">X @t_e_n_s_h_i_</a>
-        <a href="#" id="email-link" class="clink">Email</a>
+
+<section id="works" class="works">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <div class="eyebrow mono">Works</div>
+        <h2>つくってきたもの</h2>
       </div>
+      <div class="filters reveal" role="group" aria-label="カテゴリで絞り込み">
+        <button class="filter" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="AI Agent" aria-pressed="false">AI Agent</button>
+        <button class="filter" data-filter="App" aria-pressed="false">App</button>
+        <button class="filter" data-filter="Automation" aria-pressed="false">Automation</button>
+        <button class="filter" data-filter="Tool" aria-pressed="false">Tool</button>
+        <button class="filter live-toggle" data-live aria-pressed="false">Live only</button>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label mono">2026.04</div>
+      <div class="grid">
+        <a class="card" href="https://reborn-guardian.vercel.app" target="_blank" rel="noopener" data-cat="App" data-live>
+          <div class="card-head"><span class="cat">Mini App</span><span class="badge live">Live</span></div>
+          <h3>守護者診断</h3>
+          <p>『家庭教師ヒットマンREBORN!』の7つの炎属性で自分のタイプを診断するミニアプリ。10問の直感式質問で守護者タイプを判定。</p>
+          <ul class="tags"><li>Next.js</li><li>React</li><li>Vercel</li></ul>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="card" href="https://pigment.yumimil.com" target="_blank" rel="noopener" data-cat="Tool" data-live>
+          <div class="card-head"><span class="cat">Design Tool</span><span class="badge live">Live</span></div>
+          <h3>PIGMENT</h3>
+          <p>画像から自動でカラーパレットを抽出するWebツール。K-means++で最大10色を抽出し、CSS・Tailwind・Figma Variables・JSONで即エクスポート。画像はブラウザ内で処理。</p>
+          <ul class="tags"><li>K-means++</li><li>Stripe</li><li>Google OAuth</li></ul>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="card" href="https://yurari-pwa.vercel.app" target="_blank" rel="noopener" data-cat="App" data-live>
+          <div class="card-head"><span class="cat">Puzzle Game</span><span class="badge live">Live</span></div>
+          <h3><em>ゆらり</em></h3>
+          <p>パステルカラーで揺らぐマッチ3パズルPWA。同じ色のピースを3つ以上つなげて消し、コンボとレベルで段階的に進行する。心がほどけるカジュアルゲーム。</p>
+          <ul class="tags"><li>PWA</li><li>JavaScript</li><li>Canvas</li></ul>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <article class="card" data-cat="Automation" data-live>
+          <div class="card-head"><span class="cat">Business Automation</span><span class="badge live">Live</span></div>
+          <h3>クリニック納品管理自動化</h3>
+          <p>Googleドライブの納品書PDF（複数フォーマット対応）をClaude APIで自動解析し、毎日21時にLINEグループへFlex Messageで通知。納品管理業務を完全自動化。</p>
+          <ul class="tags"><li>GAS</li><li>Claude API</li><li>LINE Messaging API</li></ul>
+        </article>
+        <a class="card" href="https://nyx-trader.vercel.app/" target="_blank" rel="noopener" data-cat="AI Agent" data-live>
+          <div class="card-head"><span class="cat">AI Agent</span><span class="badge live">Live</span></div>
+          <h3>NYX</h3>
+          <p>株価・ニュースをリアルタイム監視し、売買シグナルを通知する天才投資家AIエージェント。ポートフォリオ分析・リバランス提案まで自律対応。</p>
+          <ul class="tags"><li>Claude API</li><li>Firebase</li><li>Finance API</li></ul>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <article class="card" data-cat="App">
+          <div class="card-head"><span class="cat">Emotional AI</span><span class="badge">In dev</span></div>
+          <h3><em>AI Kanojo</em></h3>
+          <p>LINE風UIで展開するAI彼氏・彼女シミュレーション。複数キャラクターが実在する街のスポットを提案し、写真を送ってくる——感情設計を極めたAIプロダクト。</p>
+          <ul class="tags"><li>Claude API</li><li>React</li><li>Emotion Design</li></ul>
+        </article>
+        <article class="card" data-cat="AI Agent">
+          <div class="card-head"><span class="cat">AI Agent</span><span class="badge">Coming soon</span></div>
+          <h3>HANA</h3>
+          <p>クリニック向けSNS・コンテンツ運用AIエージェント。「おまかせモード」で月次コンテンツを全自動生成。</p>
+          <ul class="tags"><li>Firebase</li><li>Claude API</li><li>Instagram API</li></ul>
+        </article>
+        <article class="card" data-cat="AI Agent">
+          <div class="card-head"><span class="cat">AI Agent</span><span class="badge">Coming soon</span></div>
+          <h3>LENS</h3>
+          <p>マーケティング分析AIエージェント。6つの分析モード搭載、CSVアップロードからインサイトを自動抽出。</p>
+          <ul class="tags"><li>Claude API</li><li>Firebase</li><li>Analytics</li></ul>
+        </article>
+        <article class="card" data-cat="AI Agent">
+          <div class="card-head"><span class="cat">AI Agent</span><span class="badge">Coming soon</span></div>
+          <h3>AXIS</h3>
+          <p>クリニック経営コンサルAIエージェント。KPIの自律検知・課題発見・改善提案まで対応するクールな知性派。</p>
+          <ul class="tags"><li>Claude API</li><li>Firebase</li><li>Dashboard</li></ul>
+        </article>
+        <article class="card" data-cat="AI Agent">
+          <div class="card-head"><span class="cat">AI Agent</span><span class="badge">Coming soon</span></div>
+          <h3><em>Paletta</em></h3>
+          <p>LP自動生成AIエージェント。URLやフィードバックから「良いデザイン」を学習し、14種類のスタイル×カラーで4パターン同時にLPを自動生成する。</p>
+          <ul class="tags"><li>Claude API</li><li>Next.js</li><li>Firebase</li></ul>
+        </article>
+        <article class="card" data-cat="App">
+          <div class="card-head"><span class="cat">AI Education</span><span class="badge">Coming soon</span></div>
+          <h3><em>Lumen</em></h3>
+          <p>医学生向けAI学習支援アプリ。2人のAIキャラクターがチャットとクイズで医学生を指導。親密度システムでキャラの口調が進化する。</p>
+          <ul class="tags"><li>Claude API</li><li>Next.js</li><li>Firebase</li></ul>
+        </article>
+        <article class="card" data-cat="App">
+          <div class="card-head"><span class="cat">Project Management</span><span class="badge">Coming soon</span></div>
+          <h3><em>Gantt</em></h3>
+          <p>プロダクト開発のガントチャート管理ツール。複数プロジェクトのフェーズ・優先度・マネタイズ戦略をタイムラインで可視化。ドラッグ操作で直感的に管理。</p>
+          <ul class="tags"><li>Next.js</li><li>React</li><li>Tailwind CSS</li></ul>
+        </article>
+        <article class="card" data-cat="App">
+          <div class="card-head"><span class="cat">Simulation Game</span><span class="badge">Coming soon</span></div>
+          <h3><em>SaaS Founder</em></h3>
+          <p>SaaS経営シミュレーションゲーム。24ヶ月間でSaaS企業を経営し、MRR・ARR・チャーン率などリアルな経営指標を管理しながらPMF達成を目指す。</p>
+          <ul class="tags"><li>Next.js</li><li>Firebase</li><li>Framer Motion</li></ul>
+        </article>
+        <article class="card" data-cat="App">
+          <div class="card-head"><span class="cat">AI Diagnosis</span><span class="badge">Coming soon</span></div>
+          <h3><em>animind</em></h3>
+          <p>AI思考タイプ診断ツール。チャットベースでプレイヤーの思考パターンを分析し、タイプを判定するAI診断アプリケーション。</p>
+          <ul class="tags"><li>Claude API</li><li>Firebase</li></ul>
+        </article>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label mono">2026.03</div>
+      <div class="grid">
+        <article class="card" data-cat="App" data-live>
+          <div class="card-head"><span class="cat">AI Chatbot</span><span class="badge live">Live</span></div>
+          <h3>ろあ</h3>
+          <p>美容クリニック公式LINEのAIチャットボット。肌診断・最適メニュー提案・予約動線をClaude APIで実装。お客様の質問に24時間自動応答。</p>
+          <ul class="tags"><li>Claude API</li><li>LINE API</li><li>Firebase</li></ul>
+        </article>
+        <article class="card" data-cat="Automation" data-live>
+          <div class="card-head"><span class="cat">Business Automation</span><span class="badge live">Live</span></div>
+          <h3>Square × LINE</h3>
+          <p>Squareの日次売上データを自動で画像レポート化し、LINEに毎日配信。クリニック経営者がLINEで売上をリアルタイム把握できる業務自動化ツール。</p>
+          <ul class="tags"><li>Square API</li><li>LINE API</li><li>Node.js</li></ul>
+        </article>
+        <a class="card" href="https://richmenu-lp.web.app/" target="_blank" rel="noopener" data-cat="App" data-live>
+          <div class="card-head"><span class="cat">LINE Tool</span><span class="badge live">Live</span></div>
+          <h3><em>tably</em></h3>
+          <p>LINEリッチメニューを2タブ化するSaaSツール。予約・メニュー・SNSへの導線を1つのリッチメニューに集約し、LINE公式アカウントの体験を向上させる。</p>
+          <ul class="tags"><li>LINE API</li><li>LIFF</li><li>Next.js</li></ul>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="card" href="https://koe-app-nine.vercel.app/" target="_blank" rel="noopener" data-cat="App" data-live>
+          <div class="card-head"><span class="cat">AAC App</span><span class="badge live">Live</span></div>
+          <h3>こえ — AAC Communication</h3>
+          <p>ALS・身体麻痺の方向けコミュニケーションアプリ。スペースキー1つで五十音・感情ボタン・チャットが操作できる。声が出なくても、想いは届く。</p>
+          <ul class="tags"><li>Next.js</li><li>Firebase</li><li>Web Speech API</li></ul>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="card" href="https://kira-coral-two.vercel.app/" target="_blank" rel="noopener" data-cat="AI Agent" data-live>
+          <div class="card-head"><span class="cat">AI Agent</span><span class="badge live">Live</span></div>
+          <h3>Kira</h3>
+          <p>夢見がちな東京在住AIエージェント。独自のGitHubリポジトリ・X・Firebaseメモリシステムを持つ自律型AI。</p>
+          <ul class="tags"><li>Firebase</li><li>Claude API</li><li>GitHub</li></ul>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <p class="empty" id="empty" hidden>該当する作品はありません。</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow mono" style="justify-content:center">Contact</div>
+    <h2>一緒に<em>つくりませんか</em></h2>
+    <p>AIプロダクト開発・エージェント構築のご相談はお気軽にどうぞ。</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="https://twitter.com/t_e_n_s_h_i_" target="_blank" rel="noopener">X @t_e_n_s_h_i_ <span class="ar">↗</span></a>
+      <a class="btn" href="#" id="email-link">Email</a>
     </div>
   </div>
 </section>
+</main>
+
 <footer>
-  <div class="flogo">yumimil</div>
-  <div class="fcopy">© 2026 YUMIMIL. All rights reserved.</div>
+  <div class="wrap foot">
+    <span class="logo" style="font-size:18px">yumimil<span>.</span></span>
+    <span class="mono">© 2026 YUMIMIL</span>
+  </div>
 </footer>
+
 <script>
-// --- Cursor (desktop only) ---
-const isMobile=window.matchMedia('(max-width:600px)').matches||'ontouchstart' in window;
-const cursor=document.getElementById('cursor');
-const cring=document.getElementById('cring');
-const mglow=document.getElementById('mglow');
-if(!isMobile){
-  let mx=0,my=0,rx=0,ry=0,gx=0,gy=0;
-  document.addEventListener('mousemove',e=>{
-    mx=e.clientX;my=e.clientY;
-    cursor.style.left=mx+'px';cursor.style.top=my+'px';
-  });
-  (function cloop(){
-    rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
-    gx+=(mx-gx)*.06;gy+=(my-gy)*.06;
-    cring.style.left=rx+'px';cring.style.top=ry+'px';
-    mglow.style.left=gx+'px';mglow.style.top=gy+'px';
-    requestAnimationFrame(cloop);
-  })();
-}
+// Nav background on scroll
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('scrolled',scrollY>24);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-// --- Particle system ---
-const cvs=document.getElementById('particles');
-const ctx=cvs.getContext('2d');
-let W,H;
-function resize(){W=cvs.width=window.innerWidth;H=cvs.height=window.innerHeight}
-resize();window.addEventListener('resize',resize);
-const pts=[];
-const ptCount=isMobile?25:60;
-for(let i=0;i<ptCount;i++){
-  pts.push({
-    x:Math.random()*W,y:Math.random()*H,
-    vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,
-    r:Math.random()*1.5+.5,
-    a:Math.random()*.4+.1,
-    col:[
-      'rgba(201,168,224,','rgba(168,196,224,','rgba(240,196,212,'
-    ][Math.floor(Math.random()*3)]
-  });
-}
-function drawParticles(){
-  ctx.clearRect(0,0,W,H);
-  pts.forEach(p=>{
-    p.x+=p.vx;p.y+=p.vy;
-    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
-    if(p.y<0)p.y=H;if(p.y>H)p.y=0;
-    // Twinkle
-    p.a+=Math.sin(Date.now()*.002+p.x)*.003;
-    p.a=Math.max(.05,Math.min(.5,p.a));
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle=p.col+p.a+')';
-    ctx.fill();
-  });
-  // Connect nearby particles
-  for(let i=0;i<pts.length;i++){
-    for(let j=i+1;j<pts.length;j++){
-      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
-      const dist=Math.sqrt(dx*dx+dy*dy);
-      if(dist<120){
-        ctx.beginPath();
-        ctx.moveTo(pts[i].x,pts[i].y);
-        ctx.lineTo(pts[j].x,pts[j].y);
-        ctx.strokeStyle='rgba(201,168,224,'+(1-dist/120)*.06+')';
-        ctx.stroke();
-      }
-    }
-  }
-  requestAnimationFrame(drawParticles);
-}
-drawParticles();
+// Scroll reveal (once)
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+}),{rootMargin:'0px 0px -10% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// --- Scroll reveal ---
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{
-  if(e.isIntersecting){
-    e.target.classList.add('visible');
-    // Trigger split text animation
-    const chars=e.target.querySelectorAll('.split-char');
-    chars.forEach((c,i)=>{setTimeout(()=>c.classList.add('vis'),i*35)});
-  }
-})},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-// --- Split text for titles ---
-function splitText(el){
-  const text=el.textContent;
-  el.innerHTML='';
-  el.style.perspective='600px';
-  for(const ch of text){
-    const span=document.createElement('span');
-    span.classList.add('split-char');
-    if(ch===' '||ch==='\n'){span.classList.add('space');span.innerHTML='&nbsp;';}
-    else{span.textContent=ch;}
-    el.appendChild(span);
-  }
-}
-// Apply to section titles
-document.querySelectorAll('.stitle').forEach(t=>{
-  // Preserve em tags
-  const html=t.innerHTML;
-  const temp=document.createElement('div');
-  temp.innerHTML=html;
-  t.innerHTML='';
-  t.style.perspective='600px';
-  temp.childNodes.forEach(node=>{
-    if(node.nodeType===3){
-      // Text node
-      for(const ch of node.textContent){
-        const span=document.createElement('span');
-        span.classList.add('split-char');
-        if(ch===' '||ch==='\n'){span.classList.add('space');span.innerHTML='&nbsp;';}
-        else{span.textContent=ch;}
-        t.appendChild(span);
-      }
-    } else if(node.tagName==='EM'){
-      for(const ch of node.textContent){
-        const span=document.createElement('span');
-        span.classList.add('split-char');
-        span.style.color='var(--a1)';
-        span.style.fontStyle='italic';
-        if(ch===' '){span.classList.add('space');span.innerHTML='&nbsp;';}
-        else{span.textContent=ch;}
-        t.appendChild(span);
-      }
-    } else if(node.tagName==='BR'){
-      t.appendChild(document.createElement('br'));
-    }
-  });
+// Works filter
+const cards=[...document.querySelectorAll('.card')];
+const catBtns=[...document.querySelectorAll('.filter[data-filter]')];
+const liveBtn=document.querySelector('.filter[data-live]');
+let cat='all',liveOnly=false;
+catBtns.forEach(b=>{
+  const f=b.dataset.filter;
+  const n=f==='all'?cards.length:cards.filter(c=>c.dataset.cat===f).length;
+  b.insertAdjacentHTML('beforeend','<span class="n">'+n+'</span>');
+  b.addEventListener('click',()=>{cat=f;apply()});
 });
-
-// --- Nav scroll effect ---
-const navEl=document.querySelector('nav');
-window.addEventListener('scroll',()=>{
-  navEl.classList.toggle('scrolled',window.scrollY>80);
-},{passive:true});
-
-// --- Parallax on hero elements ---
-const heroC=document.querySelector('.hero-c');
-const orbs=document.querySelectorAll('.orb');
-window.addEventListener('scroll',()=>{
-  const sy=window.scrollY;
-  if(sy<window.innerHeight){
-    const r=sy/window.innerHeight;
-    heroC.style.transform='translateY('+sy*.15+'px) scale('+(1-r*.05)+')';
-    heroC.style.opacity=1-r*.8;
-    orbs.forEach((o,i)=>{
-      o.style.transform='translateY('+sy*(.08+i*.04)+'px)';
-    });
-  }
-},{passive:true});
-
-// --- Magnetic hover for links (desktop only) ---
-if(!isMobile) document.querySelectorAll('.clink').forEach(link=>{
-  link.addEventListener('mousemove',e=>{
-    const r=link.getBoundingClientRect();
-    const x=e.clientX-r.left-r.width/2;
-    const y=e.clientY-r.top-r.height/2;
-    link.style.transform='translate('+x*.2+'px,'+y*.2+'px)';
+liveBtn.addEventListener('click',()=>{liveOnly=!liveOnly;apply()});
+function apply(){
+  catBtns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.filter===cat));
+  liveBtn.setAttribute('aria-pressed',liveOnly);
+  let shown=0;
+  cards.forEach(c=>{
+    const ok=(cat==='all'||c.dataset.cat===cat)&&(!liveOnly||c.hasAttribute('data-live'));
+    c.hidden=!ok;if(ok)shown++;
   });
-  link.addEventListener('mouseleave',()=>{
-    link.style.transform='translate(0,0)';
-  });
-});
+  document.querySelectorAll('.group').forEach(g=>{g.hidden=!g.querySelector('.card:not([hidden])')});
+  document.getElementById('empty').hidden=shown>0;
+}
 
-// --- Works filter ---
-const tabs=document.querySelectorAll('.wtab');
-const cards=document.querySelectorAll('.wcard[data-category]');
-const yearDividers=document.querySelectorAll('.wyear');
-tabs.forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    tabs.forEach(t=>t.classList.remove('active'));
-    tab.classList.add('active');
-    const f=tab.dataset.filter;
-    cards.forEach(c=>{c.classList.toggle('hidden',f!=='all'&&c.dataset.category!==f)});
-    // Hide year dividers if all cards in that section are hidden
-    yearDividers.forEach(yd=>{
-      let sib=yd.nextElementSibling;
-      let anyVisible=false;
-      while(sib&&!sib.classList.contains('wyear')){
-        if(sib.dataset.category&&!sib.classList.contains('hidden'))anyVisible=true;
-        sib=sib.nextElementSibling;
-      }
-      yd.style.display=anyVisible?'':'none';
-    });
-  });
-});
-
-// --- Email link ---
-const el=document.getElementById('email-link');
-if(el){const u='loreclinic.info';const d='gmail.com';el.href='mailto:'+u+'@'+d;}
+// Email (obfuscated)
+const em=document.getElementById('email-link');
+if(em){const u='loreclinic.info',d='gmail.com';em.href='mailto:'+u+'@'+d}
 </script>
 </body>
 </html>
